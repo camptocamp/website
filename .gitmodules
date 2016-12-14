@@ -7,3 +7,9 @@
 [submodule "odoo/external-src/account-financial-tools"]
 	path = odoo/external-src/account-financial-tools
 	url = git@github.com:OCA/account-financial-tools
+[submodule "odoo/external-src/bank-statement-reconcile"]
+	path = odoo/external-src/bank-statement-reconcile
+	url = git@github.com:OCA/bank-statement-reconcile
+[submodule "odoo/external-src/enterprise"]
+	path = odoo/external-src/enterprise
+	url = git@github.com:odoo/enterprise
