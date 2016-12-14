@@ -13,3 +13,36 @@
 [submodule "odoo/external-src/enterprise"]
 	path = odoo/external-src/enterprise
 	url = git@github.com:odoo/enterprise
+[submodule "odoo/external-src/event"]
+	path = odoo/external-src/event
+	url = git@github.com:OCA/event
+[submodule "odoo/external-src/hr-timesheet"]
+	path = odoo/external-src/hr-timesheet
+	url = git@github.com:OCA/hr-timesheet
+[submodule "odoo/external-src/knowledge"]
+	path = odoo/external-src/knowledge
+	url = git@github.com:OCA/knowledge
+[submodule "odoo/external-src/l10n-switzerland"]
+	path = odoo/external-src/l10n-switzerland
+	url = git@github.com:OCA/l10n-switzerland
+[submodule "odoo/external-src/partner-contact"]
+	path = odoo/external-src/partner-contact
+	url = git@github.com:OCA/partner-contact
+[submodule "odoo/external-src/project-reporting"]
+	path = odoo/external-src/project-reporting
+	url = git@github.com:OCA/project-reporting
+[submodule "odoo/external-src/purchase-workflow"]
+	path = odoo/external-src/purchase-workflow
+	url = git@github.com:OCA/purchase-workflow
+[submodule "odoo/external-src/reporting-engine"]
+	path = odoo/external-src/reporting-engine
+	url = git@github.com:OCA/reporting-engine
+[submodule "odoo/external-src/sale-workflow"]
+	path = odoo/external-src/sale-workflow
+	url = git@github.com:OCA/sale-workflow
+[submodule "odoo/external-src/survey"]
+	path = odoo/external-src/survey
+	url = git@github.com:OCA/survey
+[submodule "odoo/external-src/web"]
+	path = odoo/external-src/web
+	url = git@github.com:OCA/web
