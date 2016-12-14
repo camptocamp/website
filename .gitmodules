@@ -1,0 +1,3 @@
+[submodule "odoo/external-src/account-analytic"]
+	path = odoo/external-src/account-analytic
+	url = git@github.com:OCA/account-analytic
