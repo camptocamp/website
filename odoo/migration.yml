@@ -1,6 +1,6 @@
 migration:
   options:
-    install_command: odoo.py
+    install_command: odoo
   versions:
     - version: 10.0.0
       operations:
