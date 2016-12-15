@@ -161,7 +161,7 @@ def main(ctx):
     """ Setup accounting """
     activate_multicurrency(ctx)
     enable_currency(ctx)
-    #load_banks(ctx)
+    load_banks(ctx)
     set_fiscalyear(ctx)
     company_xmlid = 'scenario.smartliberty_ch'
     company = ctx.env.ref(company_xmlid)

@@ -1,0 +1,3 @@
+id,name,street,bic,zip,city
+__setup__.res_bank_bcn,Banque Cantonale Neuchâteloise,Place Pury 4,BCNNCH22,2001,Neuchâtel
+__setup__.res_bank_creditsuisse,Credit Suisse,,CRESCHZZ25A,2501,Biel
