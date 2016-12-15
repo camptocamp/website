@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 
 ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/src/addons, \
-  /opt/odoo/external-src/account-analytic
+  /opt/odoo/external-src/account-analytic, \
   /opt/odoo/external-src/account-financial-reporting, \
   /opt/odoo/external-src/account-financial-tools, \
   /opt/odoo/external-src/bank-statement-reconcile, \
@@ -23,8 +23,8 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/hr-timesheet, \
   /opt/odoo/external-src/knowledge, \
   /opt/odoo/external-src/l10n-switzerland, \
-  /opt/odoo/external-src/ partner-contact, \
-  /opt/odoo/external-src/pproject-reporting, \
+  /opt/odoo/external-src/partner-contact, \
+  /opt/odoo/external-src/project-reporting, \
   /opt/odoo/external-src/purchase-workflow, \
   /opt/odoo/external-src/reporting-engine, \
   /opt/odoo/external-src/sale-workflow, \

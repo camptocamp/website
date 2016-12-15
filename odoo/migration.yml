@@ -24,6 +24,7 @@ migration:
             - account_reversal
             - account_tax_analysis
             - account_voucher
+            - date_range
             - analytic
             - auth_oauth
             - auth_signup

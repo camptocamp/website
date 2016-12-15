@@ -7,6 +7,8 @@ from pkg_resources import Requirement, resource_filename
 from anthem.lyrics.records import create_or_update, add_xmlid
 from anthem.lyrics.loaders import load_csv
 import anthem
+from openerp import fields
+
 
 
 @anthem.log
@@ -52,7 +54,7 @@ def import_coa(ctx, coa):
 
 
 @anthem.log
-def load_account(ctx, cp):
+def load_account(ctx):
     """ Setup CoA """
     with ctx.log("Import basic CoA"):
         coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
@@ -84,10 +86,16 @@ def load_bank_journal(ctx):
 
 @anthem.log
 def set_fiscalyear(ctx):
+
+    type_values = {'name': 'Fiscal year',
+         'company_id': ctx.env.ref('scenario.smartliberty_ch').id,
+         'allow_overlap': False}
+    create_or_update(ctx, 'date.range.type', '__setup__.date_range_type', type_values)
+
     values = {'date_start': '2016-01-01',
               'name': '2016',
               'date_end': '2016-12-31',
-              'type_id': 1,
+              'type_id': ctx.env.ref('__setup__.date_range_type').id,
               'company_id': False,
               'active': True,
               }
@@ -96,7 +104,7 @@ def set_fiscalyear(ctx):
     values = {'date_start': '2015-01-01',
               'name': '2015',
               'date_end': '2015-12-31',
-              'type_id': 1,
+              'type_id': ctx.env.ref('__setup__.date_range_type').id,
               'company_id': False,
               'active': True,
               }
