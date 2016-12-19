@@ -19,7 +19,7 @@ def setup_company(ctx):
     company.name = 'SmartLiberty'
 
     # load logo on company
-    logo_content = resource_string(req, 'data/images/company_main_logo.png')
+    logo_content = resource_string(req, 'data/images/logo.png')
     b64_logo = b64encode(logo_content)
     company.logo = b64_logo
 
