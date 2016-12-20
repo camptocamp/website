@@ -61,9 +61,14 @@ def import_coa(ctx, coa):
 @anthem.log
 def load_account(ctx):
     """ Setup CoA """
-    with ctx.log("Import basic CoA"):
-        coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
-        import_coa(ctx, coa)
+    if not ctx.env['account.account'].search([]):
+        with ctx.log("Import basic CoA"):
+            coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
+            import_coa(ctx, coa)
+    with ctx.log("Import additional accounts"):
+        csv_content = resource_filename(req,
+                                        'data/install/account.account.csv')
+        load_csv(ctx, 'account.account', csv_content)
 
 
 @anthem.log
