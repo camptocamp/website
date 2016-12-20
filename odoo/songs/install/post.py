@@ -4,9 +4,10 @@
 
 import anthem
 from anthem.lyrics.loaders import load_csv
-from pkg_resources import Requirement, resource_filename
+from pkg_resources import resource_filename
 
 from ..common import req
+
 
 @anthem.log
 def load_users(ctx):

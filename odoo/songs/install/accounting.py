@@ -31,44 +31,11 @@ def enable_currency(ctx):
 
 
 @anthem.log
-def import_coa(ctx, coa):
-    TaxTemplate = ctx.env['account.tax.template']
-    sale_tax = TaxTemplate.search(
-        [('chart_template_id', 'parent_of', coa.id),
-         ('type_tax_use', '=', 'sale')], limit=1,
-        order="sequence, id desc")
-    purchase_tax = TaxTemplate.search(
-        [('chart_template_id', 'parent_of', coa.id),
-         ('type_tax_use', '=', 'purchase')], limit=1,
-        order="sequence, id desc")
-    wizard = ctx.env['wizard.multi.charts.accounts'].create({
-        'company_id': ctx.env.user.company_id.id,
-        'chart_template_id': coa.id,
-        'transfer_account_id': coa.transfer_account_id.id,
-        'code_digits': 8,
-        'sale_tax_id': sale_tax.id,
-        'purchase_tax_id': purchase_tax.id,
-        'sale_tax_rate': 15,
-        'purchase_tax_rate': 15,
-        'complete_tax_set': coa.complete_tax_set,
-        'currency_id': ctx.env.ref('base.EUR').id,
-        'bank_account_code_prefix': coa.bank_account_code_prefix,
-        'cash_account_code_prefix': coa.cash_account_code_prefix,
-    })
-    wizard.execute()
-
-
-@anthem.log
 def load_account(ctx):
     """ Setup CoA """
-    if not ctx.env['account.account'].search([]):
-        with ctx.log("Import basic CoA"):
-            coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
-            import_coa(ctx, coa)
-    with ctx.log("Import additional accounts"):
-        csv_content = resource_filename(req,
-                                        'data/install/account.account.csv')
-        load_csv(ctx, 'account.account', csv_content)
+    csv_content = resource_filename(req,
+                                    'data/install/account.account.csv')
+    load_csv(ctx, 'account.account', csv_content)
 
 
 @anthem.log
@@ -113,7 +80,7 @@ def set_fiscalyear(ctx):
 
     type_values = {
         'name': 'Fiscal year',
-        'company_id': ctx.env.ref('scenario.smartliberty_ch').id,
+        'company_id': ctx.env.ref('base.main_company').id,
         'allow_overlap': False,
     }
     create_or_update(ctx, 'date.range.type',
@@ -190,9 +157,7 @@ def main(ctx):
     enable_currency(ctx)
     load_banks(ctx)
     set_fiscalyear(ctx)
-    company_xmlid = 'scenario.smartliberty_ch'
-    company = ctx.env.ref(company_xmlid)
-    with ctx.log(u'Setup accounting for company %s' % company.name):
+    with ctx.log(u'Setup accounting for company'):
         load_account(ctx)
         load_journal(ctx)
         # load_bank_journal(ctx)
