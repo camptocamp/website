@@ -6,6 +6,7 @@ migration:
           - anthem songs.install.pre::main
         post:
           - anthem songs.install.accounting::main
+          - anthem songs.install.post::main
       addons:
         upgrade:
             - account
