@@ -1,6 +1,8 @@
 id,code,name,company_id/id,currency_id/id,reconcile,user_type_id/id,internal_type
+__setup__.account_account_7,1000,Caisse,base.main_company,,False,account.data_account_type_current_assets,other
 __setup__.account_account_1447,102.01,Cash,base.main_company,,False,account.data_account_type_liquidity,liquidity
 __setup__.account_account_1448,102.02,Bank,base.main_company,,False,account.data_account_type_liquidity,liquidity
+__setup__.account_account_17,1020,Banque BCN K1971.65.09/CHF,base.main_company,,False,account.data_account_type_current_assets,other
 __setup__.account_account_97,1215,Travaux en cours (développements internes),base.main_company,,False,account.data_account_type_current_assets,other
 __setup__.account_account_1455,1791.10,Activation R&D en cours (cumul mensuel),base.main_company,,False,account.data_account_type_fixed_assets,other
 __setup__.account_account_1464,1791.20,Activation transformation des locaux(15-20),base.main_company,,False,account.data_account_type_current_assets,other
@@ -23,6 +25,7 @@ __setup__.account_account_1500,2429,Dette envers D. Fischer,base.main_company,,F
 __setup__.account_account_1466,2422,Dette envers Gantner Wilhelm,base.main_company,,False,account.data_account_type_current_liabilities,other
 __setup__.account_account_1467,2423,Dette envers Niederer François,base.main_company,,False,account.data_account_type_current_liabilities,other
 __setup__.account_account_1468,2424,Dette envers Winkler Marcus Julius,base.main_company,,False,account.data_account_type_current_liabilities,other
+__setup__.account_account_540,2990,Bénéfice reporté / Perte reportée,base.main_company,,False,account.data_account_type_other_income,other
 __setup__.account_account_1473,3202,Petites ventes,base.main_company,,False,account.data_account_type_revenue,other
 __setup__.account_account_1472,3204,Commissions Swisscom,base.main_company,,True,account.data_account_type_revenue,other
 __setup__.account_account_1475,3205,Export,base.main_company,,False,account.data_account_type_revenue,other

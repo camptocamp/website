@@ -5,7 +5,7 @@
 from datetime import date
 from pkg_resources import resource_filename
 
-from anthem.lyrics.records import create_or_update
+from anthem.lyrics.records import create_or_update, add_xmlid
 from anthem.lyrics.loaders import load_csv
 import anthem
 
@@ -80,6 +80,22 @@ def load_banks(ctx):
 @anthem.log
 def load_journal(ctx):
     """ Import account.journal  """
+    # add xmlids on existing journals
+    mapping_codes = {
+        'BNK1': 'CS',
+        'CSH1': 'CASH',
+    }
+    for journal in ctx.env['account.journal'].search([]):
+        # some journal exist in the old instance with a different code,
+        # we set the same xmlid so we'll rebind them
+        code = mapping_codes.get(journal.code, journal.code)
+        add_xmlid(ctx, journal, '__setup__.journal_%s' % code)
+
+    # drop extraneous journals
+    ctx.env['account.journal'].search([('code', '=', 'INV')]).unlink()
+    ctx.env['account.journal'].search([('code', '=', 'BILL')]).unlink()
+    ctx.env['account.journal'].search([('code', '=', 'EXCH')]).unlink()
+
     csv_content = resource_filename(req, 'data/install/account.journal.csv')
     load_csv(ctx, 'account.journal', csv_content)
 
@@ -178,7 +194,7 @@ def main(ctx):
     company = ctx.env.ref(company_xmlid)
     with ctx.log(u'Setup accounting for company %s' % company.name):
         load_account(ctx)
-        # load_journal(ctx)
+        load_journal(ctx)
         # load_bank_journal(ctx)
         # setup_invoice_sequences(ctx)
         configure_currency_rate_live(ctx)

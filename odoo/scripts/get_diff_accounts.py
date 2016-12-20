@@ -70,11 +70,13 @@ Template = odoo.env['account.account.template']
 template_accounts = Template.browse(Template.search([]))
 template_account_codes = set(account.code for account in template_accounts)
 
+force_codes = set(['1020', '1000', '2990'])
 new_codes = account_codes - template_account_codes
+new_codes.update(force_codes)
 
 account_ids = Account.search([('code', 'in', list(new_codes))])
 data = Account.export_data(account_ids, FIELDS)['datas']
-data = [dict(zip(FIELDS, row)) for row in data]
+data = [dict(zip(FIELDS_9_0, row)) for row in data]
 
 internal_type_mapping = {
     u'Liquidités': 'liquidity',
@@ -100,6 +102,8 @@ user_type_mapping = {
             'account.data_account_type_depreciation',
     'l10n_ch.account_type_non_ope_result': \
             'account.data_account_type_other_income',
+    'l10n_ch.account_type_report_result': \
+            'account.data_account_type_other_income',
 }
 
 with open(out_file, 'wb') as fo:
@@ -108,10 +112,8 @@ with open(out_file, 'wb') as fo:
     for row in data:
         row['id'] = row['id'].replace('__export__', '__setup__')
         row['name'] = row['name'].encode('utf8')
-        row['user_type_id/id'] = user_type_mapping[row['user_type/id']]
-        del row['user_type/id']
-        row['internal_type'] = internal_type_mapping[row['type']]
-        del row['type']
+        row['user_type_id/id'] = user_type_mapping[row['user_type_id/id']]
+        row['internal_type'] = internal_type_mapping[row['internal_type']]
         if not row['currency_id/id']:
             row['currency_id/id'] = ''
         writer.writerow(row)

@@ -1,0 +1,16 @@
+id,code,name,company_id/id,currency_id/id,loss_account_id,profit_account_id,type,default_debit_account_id,default_credit_account_id,group_invoice_lines
+__setup__.journal_AMO,AMO,Amortissements,base.main_company,,,,general,,,False
+__setup__.journal_BCN,BCN,Banque BCN K1971.65.09/CHF,base.main_company,,,,bank,1020,1020,False
+__setup__.journal_CASH,CASH,Caisse,base.main_company,,,,bank,1000,1000,False
+__setup__.journal_COR,COR,Corrections,base.main_company,,,,general,,,False
+__setup__.journal_CS,CS,Bank,base.main_company,,,,bank,1021,1021,False
+__setup__.journal_ECNJ,ECNJ,Purchase Refund Journal,base.main_company,,,,general,4200,4200,False
+__setup__.journal_EXJ,EXJ,Purchase Journal,base.main_company,,,,purchase,4200,4200,False
+__setup__.journal_MISC,MISC,Miscellaneous Journal,base.main_company,,,,general,,,False
+__setup__.journal_MUS,MUS,Contrat de maintenance MUS,base.main_company,,,,general,,,False
+__setup__.journal_OPEJ,OPEJ,Opening Entries Journal,base.main_company,,,,general,2990,2990,False
+__setup__.journal_RDC,RDC,Reprise de Crésus,base.main_company,,,,general,,,False
+__setup__.journal_SAJ,SAJ,Sales Journal,base.main_company,,,,sale,3200,3200,False
+__setup__.journal_SAL,SAL,Salaires,base.main_company,,,,general,,,False
+__setup__.journal_SCNJ,SCNJ,Sales Refund Journal,base.main_company,,,,general,3200,3200,False
+__setup__.journal_STJ,STJ,Stock Journal,base.main_company,,,,general,,,False
