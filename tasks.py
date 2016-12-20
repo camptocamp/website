@@ -234,4 +234,5 @@ def translate_generate(ctx, addon_path, update_po=True):
                     {'po': po_file, 'pot': pot_file})
     print('%s.pot generated' % addon)
 
+
 translate.add_task(translate_generate, 'generate')

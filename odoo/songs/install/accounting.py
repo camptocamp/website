@@ -3,12 +3,15 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from datetime import date
-from pkg_resources import Requirement, resource_filename
+from pkg_resources import resource_filename
+
 from anthem.lyrics.records import create_or_update, add_xmlid
 from anthem.lyrics.loaders import load_csv
 import anthem
+
 from openerp import fields
 
+from ..common import req
 
 
 @anthem.log
@@ -19,9 +22,11 @@ def activate_multicurrency(ctx):
         'implied_ids': [(4, ctx.env.ref('base.group_multi_currency').id)]
     })
 
+
 @anthem.log
 def enable_currency(ctx):
-    cc = ctx.env['res.currency'].search([('name', 'in', ('GBP','USD','EUR', 'CHF'))])
+    currencies = ('GBP', 'USD', 'EUR', 'CHF')
+    cc = ctx.env['res.currency'].search([('name', 'in', currencies)])
     cc.write({'active': True})
 
 
@@ -56,14 +61,18 @@ def import_coa(ctx, coa):
 @anthem.log
 def load_account(ctx):
     """ Setup CoA """
-    with ctx.log("Import basic CoA"):
-        coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
-        import_coa(ctx, coa)
+    if not ctx.env['account.account'].search([]):
+        with ctx.log("Import basic CoA"):
+            coa = ctx.env.ref('l10n_ch.l10nch_chart_template')
+            import_coa(ctx, coa)
+    with ctx.log("Import additional accounts"):
+        csv_content = resource_filename(req,
+                                        'data/install/account.account.csv')
+        load_csv(ctx, 'account.account', csv_content)
 
 
 @anthem.log
 def load_banks(ctx):
-    req = Requirement.parse('smartliberty-odoo')
     csv_content = resource_filename(req, 'data/install/res.bank.csv')
     load_csv(ctx, 'res.bank', csv_content)
 
@@ -71,7 +80,22 @@ def load_banks(ctx):
 @anthem.log
 def load_journal(ctx):
     """ Import account.journal  """
-    req = Requirement.parse('smartliberty-odoo')
+    # add xmlids on existing journals
+    mapping_codes = {
+        'BNK1': 'CS',
+        'CSH1': 'CASH',
+    }
+    for journal in ctx.env['account.journal'].search([]):
+        # some journal exist in the old instance with a different code,
+        # we set the same xmlid so we'll rebind them
+        code = mapping_codes.get(journal.code, journal.code)
+        add_xmlid(ctx, journal, '__setup__.journal_%s' % code)
+
+    # drop extraneous journals
+    ctx.env['account.journal'].search([('code', '=', 'INV')]).unlink()
+    ctx.env['account.journal'].search([('code', '=', 'BILL')]).unlink()
+    ctx.env['account.journal'].search([('code', '=', 'EXCH')]).unlink()
+
     csv_content = resource_filename(req, 'data/install/account.journal.csv')
     load_csv(ctx, 'account.journal', csv_content)
 
@@ -79,18 +103,21 @@ def load_journal(ctx):
 @anthem.log
 def load_bank_journal(ctx):
     """ Import account.journal for banks """
-    req = Requirement.parse('smartliberty-odoo')
-    csv_content = resource_filename(req, 'data/install/account.bank.journal.csv')
+    csv_content = resource_filename(req,
+                                    'data/install/account.bank.journal.csv')
     load_csv(ctx, 'account.bank.journal', csv_content)
 
 
 @anthem.log
 def set_fiscalyear(ctx):
 
-    type_values = {'name': 'Fiscal year',
-         'company_id': ctx.env.ref('scenario.smartliberty_ch').id,
-         'allow_overlap': False}
-    create_or_update(ctx, 'date.range.type', '__setup__.date_range_type', type_values)
+    type_values = {
+        'name': 'Fiscal year',
+        'company_id': ctx.env.ref('scenario.smartliberty_ch').id,
+        'allow_overlap': False,
+    }
+    create_or_update(ctx, 'date.range.type',
+                     '__setup__.date_range_type', type_values)
 
     values = {'date_start': '2016-01-01',
               'name': '2016',
@@ -167,8 +194,7 @@ def main(ctx):
     company = ctx.env.ref(company_xmlid)
     with ctx.log(u'Setup accounting for company %s' % company.name):
         load_account(ctx)
-        # load_journal(ctx)
+        load_journal(ctx)
         # load_bank_journal(ctx)
         # setup_invoice_sequences(ctx)
         configure_currency_rate_live(ctx)
-
