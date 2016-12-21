@@ -23,6 +23,7 @@ migration:
             - account_reversal
             - account_tax_analysis
             - account_voucher
+            - cloud_platform
             - date_range
             - analytic
             - auth_oauth

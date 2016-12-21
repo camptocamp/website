@@ -26,7 +26,14 @@ def admin_user_password(ctx):
 
 
 @anthem.log
+def install_cloud_platform(ctx):
+    """ Installing Cloud Platform """
+    ctx.env['cloud.platform'].install_exoscale()
+
+
+@anthem.log
 def main(ctx):
     """ Main: creating demo data """
     load_users(ctx)
     admin_user_password(ctx)
+    install_cloud_platform(ctx)
