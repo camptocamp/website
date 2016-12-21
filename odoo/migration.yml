@@ -67,6 +67,7 @@ migration:
             - l10n_ch_zip
             - l10n_multilang
             - mail
+            - mail_environment
             - mass_mailing
             - mrp
             - mrp_repair
