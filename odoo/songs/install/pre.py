@@ -5,7 +5,6 @@
 from base64 import b64encode
 from pkg_resources import resource_string
 import anthem
-from anthem.lyrics.records import create_or_update
 
 from ..common import req
 
@@ -14,32 +13,27 @@ from ..common import req
 def setup_company(ctx):
     """ Setup company """
     company = ctx.env.ref('base.main_company')
-    company.name = 'SmartLiberty'
 
     # load logo on company
     logo_content = resource_string(req, 'data/images/logo.png')
     b64_logo = b64encode(logo_content)
     company.logo = b64_logo
 
-    with ctx.log(u'Configuring company'):
-        values = {
-            'name': "Smartliberty",
-            'street': "",
-            'zip': "",
-            'city': "",
-            'country_id': ctx.env.ref('base.ch').id,
-            'phone': "+41 00 000 00 00",
-            'fax': "+41 00 000 00 00",
-            'email': "contact@smartliberty.ch",
-            'website': "http://www.smartliberty.ch",
-            'vat': "VAT",
-            'parent_id': company.id,
-            'logo': b64_logo,
-            'currency_id': ctx.env.ref('base.CHF').id,
-        }
-        create_or_update(ctx, 'res.company',
-                         'scenario.smartliberty_ch',
-                         values)
+    values = {
+        'name': "Smartliberty",
+        'street': "",
+        'zip': "",
+        'city': "",
+        'country_id': ctx.env.ref('base.ch').id,
+        'phone': "+41 32 752 48 11",
+        'fax': "+41 32 752 48 10",
+        'email': "contact@smartliberty.ch",
+        'website': "http://www.smartliberty.ch",
+        'vat': "VAT",
+        'logo': b64_logo,
+        'currency_id': ctx.env.ref('base.CHF').id,
+    }
+    company.update(values)
 
 
 @anthem.log
