@@ -1,45 +1,128 @@
-id,code,name,company_id/id,currency_id/id,reconcile,user_type_id/id,internal_type
-__setup__.account_account_7,1000,Caisse,base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1447,102.01,Cash,base.main_company,,False,account.data_account_type_liquidity,liquidity
-__setup__.account_account_1448,102.02,Bank,base.main_company,,False,account.data_account_type_liquidity,liquidity
-__setup__.account_account_17,1020,Banque BCN K1971.65.09/CHF,base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_97,1215,Travaux en cours (développements internes),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1455,1791.10,Activation R&D en cours (cumul mensuel),base.main_company,,False,account.data_account_type_fixed_assets,other
-__setup__.account_account_1464,1791.20,Activation transformation des locaux(15-20),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1456,1791.36,Activation R&D James IV 02 (12-16),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1457,1791.39,Activation R&D James IV 03 (14-18),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1458,1791.40,Activation R&D Liberty 7 (14-18),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1459,1791.42,Activation R&D SmartLiberty-1 (15-19),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1460,1791.43,Activation R&D Liberty 8 (15-19),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1461,1791.44,Activation R&D James IV 04 (15-19),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1462,1791.45,Activation SmartLiberty (GantnerSolutions 2015) (16-20),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1463,1791.46,Activation R&D James IV 05 (16-20),base.main_company,,False,account.data_account_type_current_assets,other
-__setup__.account_account_1470,2302,Produits constatés d'avance (sans TVA) / Advanon ,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1469,2401,Dettes bancaires à long terme (CRC-PME / BCN),base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1465,2421,Dette envers Rusca Eric,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1496,2425 ,Dette envers Britz Tobias,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1497,2426,Dette envers Novitech SA,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1498,2427,Dette envers M. Bourquin,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1499,2428,Dette envers S. Kull,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1500,2429,Dette envers D. Fischer,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1466,2422,Dette envers Gantner Wilhelm,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1467,2423,Dette envers Niederer François,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_1468,2424,Dette envers Winkler Marcus Julius,base.main_company,,False,account.data_account_type_current_liabilities,other
-__setup__.account_account_540,2990,Bénéfice reporté / Perte reportée,base.main_company,,False,account.data_account_type_other_income,other
-__setup__.account_account_1473,3202,Petites ventes,base.main_company,,False,account.data_account_type_revenue,other
-__setup__.account_account_1472,3204,Commissions Swisscom,base.main_company,,True,account.data_account_type_revenue,other
-__setup__.account_account_1475,3205,Export,base.main_company,,False,account.data_account_type_revenue,other
-__setup__.account_account_577,3203,"MUS (compte général, sans TVA)",base.main_company,,False,account.data_account_type_revenue,other
-__setup__.account_account_1489,4071.01,Droits de douane à l'importation (sans TVA),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1477,4203,Licences IDENTEC Group,base.main_company,,True,account.data_account_type_expenses,other
-__setup__.account_account_1486,5270.01,"Remboursement AVS, assurance-chômage, allocations enfants, APG",base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1483,5273.01,"Remboursement Assurance-accidents, Business combi LAA - LAAC",base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1490,5274.01,Rembourseement assurance indemnités journalières en cas maladie - IJM,base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1484,5289.01,Autres charges de personnel (sans TVA),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1449,5820.01,Frais de voyages (étranger),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1450,5821.01,Frais de repas (étranger),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1451,5822.01,Frais de logement (étranger),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1478,6513.01,Frais de port (sans TVA),base.main_company,,False,account.data_account_type_expenses,other
-__setup__.account_account_1452,6540.01,IDENTEC Group Management Fees,base.main_company,,True,account.data_account_type_expenses,other
-__setup__.account_account_1485,6924,Amortissements NoviTech Sàrl,base.main_company,,False,account.data_account_type_depreciation,other
-__setup__.account_account_1492,8009,Gain sur abandon de créances,base.main_company,,False,account.data_account_type_other_income,other
+id,code,name,company_id/id,currency_id/id,reconcile,user_type_id/id
+__setup__.account_1000,1000,Caisse,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1020,1020,Banque BCN K1971.65.09/CHF,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1021,1021,Banque CS 863560-5100 0 / CHF,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1090,1090,Mouvements de fonds,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1100,1100,Créances envers des tiers suisses (Débiteurs ouverts Projets),base.main_company,,True,account.data_account_type_receivable
+__setup__.account_1103,1103,Créances envers des tiers suisses (Débiteurs ouverts MUS),base.main_company,,True,account.data_account_type_receivable
+__setup__.account_1104,1104,Créances export (Débiteurs ouverts Export),base.main_company,,True,account.data_account_type_receivable
+__setup__.account_1191,1191,Cautionnements en espèces (dépôt de garantie de loyer),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1170,1170,TVA: déductible s/achats de matières et services,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1171,1171,TVA: déductible s/investissement et autres charges d'exploitation,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1200,1200,Stocks de marchandises,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1210,1210,Travaux en cours (externes),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1301,1301,Produits à recevoir,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1300,1300,Charges constatées d'avance (actifs transitoires),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1420,1420,Participation dans NoviTech Sàrl,base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1500,1500,Machines et appareils,base.main_company,,True,account.data_account_type_current_assets
+__setup__.account_1510,1510,Mobilier d'exploitation,base.main_company,,True,account.data_account_type_current_assets
+__setup__.account_1521,1521,Infrastructures informatiques,base.main_company,,True,account.data_account_type_current_assets
+__setup__.account_1530,1530,Automobiles,base.main_company,,True,account.data_account_type_current_assets
+__setup__.account_1700,1700,Brevets,base.main_company,,False,account.data_account_type_fixed_assets
+__setup__.account_1710,1710,Marques commerciales,base.main_company,,False,account.data_account_type_fixed_assets
+__setup__.account_1791_20,1791.20,Activation transformation des locaux(15-20),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_36,1791.36,Activation R&D James IV 02 (12-16),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_39,1791.39,Activation R&D James IV 03 (14-18),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_40,1791.40,Activation R&D Liberty 7 (14-18),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_42,1791.42,Activation R&D SmartLiberty-1 (15-19),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_43,1791.43,Activation R&D Liberty 8 (15-19),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_44,1791.44,Activation R&D James IV 04 (15-19),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_45,1791.45,Activation SmartLiberty (GantnerSolutions 2015) (16-20),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_1791_46,1791.46,Activation R&D James IV 05 (16-20),base.main_company,,False,account.data_account_type_current_assets
+__setup__.account_2000,2000,Dettes c/achats de matières et marchandises (créanciers ouverts),base.main_company,,True,account.data_account_type_payable
+__setup__.account_2002,2002,Dettes c/charges de personnel,base.main_company,,True,account.data_account_type_payable
+__setup__.account_2003,2003,Dettes c/assurances sociales,base.main_company,,True,account.data_account_type_payable
+__setup__.account_2004,2004,Notes de frais à payer,base.main_company,,True,account.data_account_type_payable
+__setup__.account_2005,2005,Cartes de crédits à payer (Master),base.main_company,,True,account.data_account_type_payable
+__setup__.account_2200,2200,TVA due,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2201,2201,Décompte TVA,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2300,2300,Charges à payer (passifs transitoires),base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2301,2301,MUS payés en avance (sans TVA) ,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2302,2302,Produits constatés d'avance (sans TVA) / Advanon ,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2330,2330,Provisions pour travaux de garantie à court terme,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2401,2401,Dettes bancaires à long terme (CRC-PME / BCN),base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2420,2420,Dettes envers Identec Group AG ,base.main_company,,True,account.data_account_type_payable
+__setup__.account_2421,2421,Dette envers Rusca Eric,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2425 ,2425 ,Dette envers Britz Tobias,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2426,2426,Dette envers Novitech SA,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2427,2427,Dette envers M. Bourquin,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2428,2428,Dette envers S. Kull,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2429,2429,Dette envers D. Fischer,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2422,2422,Dette envers Gantner Wilhelm,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2423,2423,Dette envers Niederer François,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2424,2424,Dette envers Winkler Marcus Julius,base.main_company,,False,account.data_account_type_current_liabilities
+__setup__.account_2800,2800,Capital propre,base.main_company,,False,account.data_account_type_equity
+__setup__.account_2900,2900,Réserve légale,base.main_company,,False,account.data_account_type_equity
+__setup__.account_2990,2990,Bénéfice reporté / Perte reportée,base.main_company,,False,account.data_account_type_other_income
+__setup__.account_2991,2991,Bénéfice de l'exercice / Perte de l'exercice,base.main_company,,False,account.data_account_type_other_income
+__setup__.account_3096,3096,Différences de change,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3200,3200,Projets SmartLiberty,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3201,3201,MUS (avec TVA),base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3202,3202,Petites ventes,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3204,3204,Commissions Swisscom,base.main_company,,True,account.data_account_type_revenue
+__setup__.account_3205,3205,Export,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3203,3203,"MUS (compte général, sans TVA)",base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3608,3608,Variations des travaux en cours,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3610,3610,Activation R&D,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_3905,3905,Pertes s/clients,base.main_company,,False,account.data_account_type_revenue
+__setup__.account_4071,4071,Droits de douane à l'importation (TVA),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_4071_01,4071.01,Droits de douane à l'importation (sans TVA),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_4096,4096,Différences de change s/achats,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_4200,4200,SmartLiberty - Matériel (avec TVA),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_4201,4201,SmartLiberty - Matériel (sans TVA),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_4203,4203,Licences IDENTEC Group,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_4208,4208,Variations de stocks,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_5200,5200,Salaires,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5203,5203,Commissions,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5270,5270,"AVS, assurance-chômage, allocations enfants, APG",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5272,5272,Prévoyance professionnelle (2ème pilier),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5273,5273,"Assurance-accidents, Business combi LAA - LAAC",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5273_01,5273.01,"Remboursement Assurance-accidents, Business combi LAA - LAAC",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5274,5274,Assurance indemnités journalières en cas maladie - IJM,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5279,5279,Impôts à la source,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5280,5280,Recherche de personnel,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_5281,5281,Formation et formation continue,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5290,5290,Employés temporaires,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_5800,5800,Annonces pour recherche de personnel,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5820,5820,Frais de voyages (CH),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_5820_01,5820.01,Frais de voyages (étranger),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5821,5821,Frais de repas (CH),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_5821_01,5821.01,Frais de repas (étranger),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5822,5822,Frais de logement (CH),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_5822_01,5822.01,Frais de logement (étranger),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6000,6000,Loyer,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6050,6050,Entretien des usines,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6101,6101,ERR de parc informatique,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6200,6200,"Réparation, service et nettoyage des voitures",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6210,6210,"Carburants pour voitures, parking",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6220,6220,"Assurances pour voitures, taxes",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6263,6263,Charges de location pour véhicules en crédit-bail (leasing),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6270,6270,Frais pour km privés,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6300,6300,"Assurance pour dommages combi (RC, Casco,vols)",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6311,6311,Assurance garantie,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6400,6400,Electricité,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6460,6460,"Evacuation de déchets, eau, épuration",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6503,6503,Littérature technique (journaux),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6500,6500,"Matériel de bureau, imprimés, photocopie, tonner",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6501,6501,Divers / Cafétéria,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6510,6510,"Téléphone, GSM, fax",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6512,6512,Internet,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6513,6513,Frais de port (avec TVA),base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6513_01,6513.01,Frais de port (sans TVA),base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6520,6520,Cotisations,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6521,6521,Dons et cadeaux,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6532,6532,Honoraires pour conseil juridique,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6542,6542,Charges pour organe de révision,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6570,6570,Charges de licence/Update/Software,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6573,6573,"Disquettes, CD-Rom, cassettes, fournitures",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6600,6600,"Publicité dans les journaux, internet",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6610,6610,"Imprimés publicitaires, matériel de publicité",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6620,6620,"Vitrines, décoration",base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6621,6621,"Foires, expositions",base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6661,6661,Sponsoring,base.main_company,,True,account.data_account_type_expenses
+__setup__.account_6800,6800,Charges financières pour crédit bancaire,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6801,6801,Charges financières pour emprunts,base.main_company,,False,account.data_account_type_expenses
+__setup__.account_6924,6924,Amortissements NoviTech Sàrl,base.main_company,,False,account.data_account_type_depreciation
+__setup__.account_6951,6951,"Amortissements s/charges de recherche, dévelop.",base.main_company,,False,account.data_account_type_depreciation
+__setup__.account_8901,8901,Impôts sur le capital,base.main_company,,False,account.data_account_type_other_income
+__setup__.account_9100,9100,Bilan d'ouverture,base.main_company,,False,account.data_unaffected_earnings
