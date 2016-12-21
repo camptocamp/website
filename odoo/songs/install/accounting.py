@@ -33,13 +33,17 @@ def enable_currency(ctx):
 @anthem.log
 def load_account(ctx):
     """ Setup CoA """
-    csv_content = resource_filename(req,
-                                    'data/install/account.account.csv')
-    load_csv(ctx, 'account.account', csv_content)
-    Account = ctx.env['account.account']
-    Account.search([('code', '=', '1021')]).name = (
-        'Banque CS 863560-5100 0 / CHF'
-    )
+    with ctx.log('set xmlids on existing accounts'):
+        for account in ctx.env['account.account'].search([]):
+            add_xmlid(ctx, account, '__setup__.account_%s' %
+                      account.code.replace('.', '_'))
+
+    # as we have predictable xmlids, we can use the same ones in the generated
+    # csv file
+    with ctx.log('load csv'):
+        csv_content = resource_filename(req,
+                                        'data/install/account.account.csv')
+        load_csv(ctx, 'account.account', csv_content)
 
 
 @anthem.log

@@ -43,7 +43,6 @@ FIELDS = [
     'currency_id/id',
     'reconcile',
     'user_type/id',
-    'type',
 ]
 
 FIELDS_9_0 = [
@@ -54,7 +53,6 @@ FIELDS_9_0 = [
     'currency_id/id',
     'reconcile',
     'user_type_id/id',
-    'internal_type',
 ]
 
 password = getpass.getpass()
@@ -62,26 +60,17 @@ password = getpass.getpass()
 odoo = odoorpc.ODOO(host=host, port=port)
 odoo.login(db_name, user, password)
 
+MoveLine = odoo.env['account.move.line']
 Account = odoo.env['account.account']
-accounts = Account.browse(Account.search([]))
-account_codes = set(account.code for account in accounts)
+domain = [
+    ('type', '!=', 'view'),
+]
+account_ids = Account.search(domain)
+account_ids = [id_ for id_ in account_ids
+               if MoveLine.search([('account_id', '=', id_)], limit=1)]
 
-Template = odoo.env['account.account.template']
-template_accounts = Template.browse(Template.search([]))
-template_account_codes = set(account.code for account in template_accounts)
-
-force_codes = set(['1020', '1000', '2990'])
-new_codes = account_codes - template_account_codes
-new_codes.update(force_codes)
-
-account_ids = Account.search([('code', 'in', list(new_codes))])
 data = Account.export_data(account_ids, FIELDS)['datas']
 data = [dict(zip(FIELDS_9_0, row)) for row in data]
-
-internal_type_mapping = {
-    u'Liquidités': 'liquidity',
-    u'Normal': 'other',
-}
 
 user_type_mapping = {
     'account.data_account_type_cash': 'account.data_account_type_liquidity',
@@ -104,16 +93,45 @@ user_type_mapping = {
             'account.data_account_type_other_income',
     'l10n_ch.account_type_report_result': \
             'account.data_account_type_other_income',
+    'l10n_ch.account_type_adj_liability': \
+            'account.data_account_type_current_liabilities',
+    'l10n_ch.account_type_adjusting_asset': \
+            'account.data_account_type_current_assets',
+    'l10n_ch.account_type_cash': \
+            'account.data_account_type_current_assets',
+    'l10n_ch.account_type_equity': \
+            'account.data_account_type_equity',
+    'l10n_ch.account_type_financial_result': \
+            'account.data_account_type_expenses',
+    'l10n_ch.account_type_fixed_asset': \
+            'account.data_account_type_current_assets',
+    'l10n_ch.account_type_other_receivable': \
+        'account.data_account_type_current_assets',
+    'l10n_ch.account_type_payable': \
+        'account.data_account_type_payable',
+    'l10n_ch.account_type_prov_reserve': \
+        'account.data_account_type_equity',
+    'l10n_ch.account_type_receivable': \
+        'account.data_account_type_receivable',
+    # TODO: check
+    'l10n_ch.account_type_closing': 'account.data_unaffected_earnings',
+    'l10n_ch.account_type_financial_asset': \
+            'account.data_account_type_current_assets',
+
 }
 
+reconcilable = ('account.data_account_type_payable',
+                'account.data_account_type_receivable')
+errors = {}
 with open(out_file, 'wb') as fo:
     writer = csv.DictWriter(fo, delimiter=',', fieldnames=FIELDS_9_0)
     writer.writeheader()
     for row in data:
-        row['id'] = row['id'].replace('__export__', '__setup__')
+        row['id'] = '__setup__.account_%s' % row['code'].replace('.', '_')
         row['name'] = row['name'].encode('utf8')
         row['user_type_id/id'] = user_type_mapping[row['user_type_id/id']]
-        row['internal_type'] = internal_type_mapping[row['internal_type']]
         if not row['currency_id/id']:
             row['currency_id/id'] = ''
+        if row['user_type_id/id'] in reconcilable:
+            row['reconcile'] = 'True'
         writer.writerow(row)
