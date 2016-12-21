@@ -23,6 +23,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/hr-timesheet, \
   /opt/odoo/external-src/knowledge, \
   /opt/odoo/external-src/l10n-switzerland, \
+  /opt/odoo/external-src/odoo-cloud-platform, \
   /opt/odoo/external-src/partner-contact, \
   /opt/odoo/external-src/project-reporting, \
   /opt/odoo/external-src/purchase-workflow, \

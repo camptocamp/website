@@ -52,3 +52,6 @@
 [submodule "odoo/external-src/server-tools"]
 	path = odoo/external-src/server-tools
 	url = git@github.com:camptocamp/server-tools
+[submodule "odoo/external-src/odoo-cloud-platform"]
+	path = odoo/external-src/odoo-cloud-platform
+	url = git@github.com:camptocamp/odoo-cloud-platform
