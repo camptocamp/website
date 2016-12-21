@@ -36,6 +36,10 @@ def load_account(ctx):
     csv_content = resource_filename(req,
                                     'data/install/account.account.csv')
     load_csv(ctx, 'account.account', csv_content)
+    Account = ctx.env['account.account']
+    Account.search([('code', '=', '1021')]).name = (
+        'Banque CS 863560-5100 0 / CHF'
+    )
 
 
 @anthem.log
