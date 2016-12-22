@@ -16,13 +16,28 @@
 Release History
 ---------------
 
-latest (unreleased)
+Unreleased
+++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+10.0.0 (2016-12-22)
 +++++++++++++++++++
 
-*Features and Improvements*
+Initial setup.
 
-*Bugfixes*
-
-*Build*
-
-*Documentation*
+* Install generic addons
+* Base setup of the company
+* Activate multicurrency
+* Load banks
+* Load accounts
+* Load journals
+* Setup currency rate updates
+* Load users and change admin password
+* Install cloud platform
