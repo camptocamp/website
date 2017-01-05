@@ -27,28 +27,19 @@ class SaleOrderLine(models.Model):
             line.product_code_description = result
 
     @api.multi
-    def product_id_change(self, pricelist, product, qty=0, uom=False,
-                          qty_uos=0, uos=False, name='', partner_id=False,
-                          lang=False, update_tax=True, date_order=False,
-                          packaging=False, fiscal_position=False, flag=False):
-        result = super(SaleOrderLine, self).product_id_change(
-            pricelist=pricelist,
-            product=product,
-            qty=qty,
-            uom=uom,
-            qty_uos=qty_uos,
-            uos=uos,
-            name=name,
-            partner_id=partner_id,
-            lang=lang,
-            update_tax=update_tax,
-            date_order=date_order,
-            packaging=packaging,
-            fiscal_position=fiscal_position,
-            flag=flag,
-        )
-        name = result['value'] and result['value'].get('name')
+    @api.onchange('product_id')
+    def product_id_change(self):
+        vals = {}
+        if not self.product_id:
+            return {'domain': {'product_uom': []}}
+        result = super(SaleOrderLine, self).product_id_change()
+        # name = result['value'] and result['value'].get('name')
+        name = self.product_id.name_get()[0][1]
         if name:
-            result['value']['name'] = re.sub(r'\[.*?\] (.*)', r'\1', name)
+            name = re.sub(r'\[.*?\] (.*)', r'\1', name)
+            if self.product_id.description_sale:
+                name += '\n' + self.product_id.description_sale
+            vals['name'] = name
+            self.update(vals)
 
         return result

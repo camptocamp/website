@@ -108,9 +108,29 @@
         <th>Pos</th>
       </xpath>
 
-<!--       <xpath expr="//t[@t-if='p_index &lt; p_size - 1']/thead/tr/th[1]" position="before">
-        <th>Pos</th>
-      </xpath> -->
+      <xpath expr="//div[@class='page']/h2" position="replace">
+        <h2>
+          <span t-if="doc.state not in ['draft','sent']">Order </span>
+          <span t-if="doc.state in ['draft','sent']">Quotation </span>
+          <span t-field="doc.name"/>
+        </h2>
+      </xpath>
+
+      <xpath expr="//strong[contains(., 'Your Reference:')]" position="replace">
+        <strong>Your Reference</strong>
+      </xpath>
+
+      <xpath expr="//strong[contains(., 'Date Ordered:')]" position="replace">
+        <strong>Date Ordered</strong>
+      </xpath>
+
+      <xpath expr="//strong[contains(., 'Quotation Date:')]" position="replace">
+        <strong>Quotation Date</strong>
+      </xpath>
+
+      <xpath expr="//strong[contains(., 'Salesperson:')]" position="replace">
+        <strong>Salesperson</strong>
+      </xpath>
 
       <xpath expr="//span[@t-field='l.name']/.." position="before">
         <td>
