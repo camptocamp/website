@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_quotation_document"
+
+      inherit_id="specific_report.report_sale_layouted"
+      primary="True">
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[7]"
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-if='p_index &lt; p_size - 1']/thead/tr/th[7]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[6]"
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-if='p_index &lt; p_size - 1']/thead/tr/th[6]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[5]"
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-if='p_index &lt; p_size - 1']/thead/tr/th[5]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[3]"
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-if='p_index &lt; p_size - 1']/thead/tr/th[3]"
+        position="replace"/>
+
+      <xpath
+        expr="//span[@t-field='l.price_unit']/.."
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-as='l']/tr/td[3]"
+        position="replace"/>
+
+      <xpath
+        expr="//span[@t-field='l.discount']/.."
+        position="replace"/>
+
+      <xpath
+        expr="//span[@t-field='l.price_subtotal']/.."
+        position="replace"/>
+
+      <xpath expr="//span[@t-field='l.product_code_description']" position="attributes">
+        <attribute name="t-field">l.name</attribute>
+      </xpath>
+
+    </template>
+
+    <template id="report_quotation">
+      <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+          <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'specific_report.report_quotation_document')"/>
+        </t>
+      </t>
+    </template>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+      id="report_picking"
+      inherit_id="delivery.report_shipping2">
+
+      <xpath expr="//div[@t-field='o.partner_id']" position="attributes">
+        <!-- hide phone numbers -->
+        <attribute name="t-field-options">
+          {"widget": "contact", "fields": ["address", "name"], "no_marker": true}
+        </attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-field='o.move_lines[0].partner_id']" position="attributes">
+        <!-- hide phone numbers -->
+        <attribute name="t-field-options">
+          {"widget": "contact", "fields": ["address", "name"], "no_marker": true}
+        </attribute>
+      </xpath>
+
+
+      <xpath expr="//div[@t-field='o.picking_type_id.warehouse_id.partner_id']" position="attributes">
+        <!-- hide phone numbers -->
+        <attribute name="t-field-options">
+          {"widget": "contact", "fields": ["address", "name"], "no_marker": true}
+        </attribute>
+      </xpath>
+
+      <xpath
+        expr="//table[@class='table table-condensed'][1]"
+        position="replace">
+          <div class="row mt32 mb32">
+              <div class="col-xs-3">
+                  <strong>Order (Origin)</strong>
+                  <p t-field="o.origin"/>
+              </div>
+              <div class="col-xs-3">
+                  <strong>State</strong>
+                  <p t-field="o.state"/>
+              </div>
+              <div class="col-xs-3">
+                  <strong>Commitment Date</strong>
+                  <p t-field="o.min_date"/>
+              </div>
+              <t t-if="o.sale_id and o.sale_id.project_id">
+                  <div class="col-xs-3">
+                      <strong>Analytic Account</strong>
+                      <p t-field="o.sale_id.project_id"/>
+                  </div>
+              </t>
+          </div>
+      </xpath>
+    </template>
+    <template
+    id="report_picking"
+    inherit_id="stock.report_picking">
+<!--       <xpath
+        expr="//table[@t-if='not o.pack_operation_ids']/thead/tr/th[1]"
+        position="before">
+        <th>Pos</th>
+      </xpath> -->
+
+<!-- The move_index doesn't seems to work -->
+<!--       <xpath expr="//span[@t-field='pack_operation.product_id']/../.." position="before">
+        <td>
+          <span t-esc="move_index + 1"/>
+        </td>
+      </xpath> -->
+
+      <xpath expr="//span[@t-field='pack_operation.product_id']" position="attributes">
+        <attribute name="t-field">pack_operation.with_context(display_default_code=False).product_id</attribute>
+      </xpath>
+
+<!--       <xpath expr="//span[@t-field='o.picking_type_id']" position="attributes">
+        <attribute name="t-field">o.picking_type_id.name</attribute>
+      </xpath> -->
+
+      <!-- original in addons/delivery/views/report_shipping.xml -->
+<!--       <xpath expr="//div[@name='invoice_partner']" position="attributes">
+
+        <attribute name="t-if">o.picking_type_id.code == 'outgoing' and o.sale_id and o.sale_id.partner_invoice_id and o.sale_id.partner_invoice_id != o.partner_id</attribute>
+      </xpath> -->
+
+      <xpath expr="//table[@t-if='o.pack_operation_ids']" position="after">
+        <div class="row mb32 ">
+          <div class="col-xs-12 fillin-block"><strong>Confirmation of delivery</strong></div>
+          <div class="col-xs-6">
+            <div class="col-xs-4 fillin-header fillin-separator">Location</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-4 fillin-header fillin-separator">Name(s)</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="col-xs-4 fillin-header fillin-separator">Date</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-4 fillin-header fillin-separator">Signature(s)</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+          </div>
+          <div class="col-xs-12 fillin-disclaimer">With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch.</div>
+        </div>
+      </xpath>
+
+      <xpath expr="//div[@name='partner_header']/../.." position="attributes">
+        <attribute name="class">address-row</attribute>
+      </xpath>
+
+      <xpath expr="//div[@name='partner_header']/.." position="attributes">
+        <attribute name="class">envelope-window</attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-field='o.move_lines[0].partner_id']/../.." position="attributes">
+        <attribute name="class">left-address</attribute>
+      </xpath>
+
+<!--       <xpath expr="//div[@class='page']/div[@class='row']/div/img/../.." position="replace"/>
+ -->
+<!--       <xpath expr="//h1[@t-field='o.name']" position="after">
+        <span class="picking-barcode">
+          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
+        </span>
+      </xpath> -->
+
+<!--       <xpath expr="//h1" position="before">
+        <div class="barcode-spacer"/>
+      </xpath> -->
+
+    </template>
+
+    <template id="report_picking_report">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'stock.report_picking')"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

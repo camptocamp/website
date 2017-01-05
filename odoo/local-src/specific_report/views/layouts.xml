@@ -100,19 +100,19 @@
 
     </template>
 
-        <template id="report.external_layout_footer">
-            <div class="footer">
-                <ul name="financial_infos"></ul>
-                <div class="text-center" style="border-top: 1px solid black; font-size: 6.5px; padding-top: 20px">
-                    <ul class="list-inline">SmartLiberty SA | Route de Neuchâtel 46 | 2525 Le Landeron | Switzerland | +41 32 752 48 11 | info@smartliberty.ch | www.smartliberty.ch</ul>
-                    <ul class="list-inline">VAT: CHE-102.754.062 | Reg: CH-645.1.006.864-5</ul>
-                    <ul class="list-inline">
-                        <li>Page:</li>
-                        <li><span class="page"/></li>
-                        <li>/</li>
-                        <li><span class="topage"/></li>
-                    </ul>
-                </div>
+    <template id="report.external_layout_footer">
+        <div class="footer">
+            <ul name="financial_infos"></ul>
+            <div class="text-center" style="border-top: 1px solid black; font-size: 6.5px; padding-top: 20px">
+                <ul class="list-inline">SmartLiberty SA | Route de Neuchâtel 46 | 2525 Le Landeron | Switzerland | +41 32 752 48 11 | info@smartliberty.ch | www.smartliberty.ch</ul>
+                <ul class="list-inline">VAT: CHE-102.754.062 | Reg: CH-645.1.006.864-5</ul>
+                <ul class="list-inline">
+                    <li>Page:</li>
+                    <li><span class="page"/></li>
+                    <li>/</li>
+                    <li><span class="topage"/></li>
+                </ul>
             </div>
-        </template>
+        </div>
+    </template>
 </odoo>

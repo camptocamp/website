@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report.paperformat_euro" model="report.paperformat">
+      <field name="margin_top">48</field>       <!-- was 40 -->
+      <field name="margin_bottom">23</field>    <!-- was 23 -->
+      <field name="margin_left">12</field>      <!-- was 7  -->
+      <field name="margin_right">12</field>     <!-- was 7  -->
+      <field name="header_spacing">35</field>   <!-- was 35 -->
+    </record>
+
+</odoo>
