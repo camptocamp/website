@@ -96,6 +96,10 @@
         </td>
       </xpath>
 
+      <xpath expr="//span[@t-field='l.name']" position="after">
+          <span t-esc="l_index + 1"/>toto
+      </xpath>
+
       <xpath expr="//p[@t-field='o.name']/.." position="attributes">
         <attribute name="class">col-xs-3</attribute>
       </xpath>

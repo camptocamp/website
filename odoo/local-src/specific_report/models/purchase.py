@@ -9,27 +9,22 @@ from odoo import models, api
 class PurchaseLine(models.Model):
     _inherit = 'purchase.order.line'
 
-    @api.multi
-    def onchange_product_id(self, pricelist_id, product_id, qty, uom_id,
-                            partner_id, date_order=False,
-                            fiscal_position_id=False, date_planned=False,
-                            name=False, price_unit=False, state='draft'):
-        result = super(PurchaseLine, self).onchange_product_id(
-            pricelist_id,
-            product_id,
-            qty,
-            uom_id,
-            partner_id,
-            date_order,
-            fiscal_position_id,
-            date_planned,
-            name,
-            price_unit,
-            state,
-        )
+    @api.onchange('product_id')
+    def onchange_product_id(self):
+        result = {}
+        if not self.product_id:
+            return result
 
-        name = result['value'] and result['value'].get('name')
-        if name:
-            result['value']['name'] = name.replace(u'] ', u']\n', 1)
+        result = super(PurchaseLine, self).onchange_product_id()
+
+        product_lang = self.product_id.with_context({
+            'lang': self.partner_id.lang,
+            'partner_id': self.partner_id.id,
+        })
+        self.name = product_lang.display_name
+        if self.name:
+            if product_lang.description_purchase:
+                self.name += '\n' + product_lang.description_purchase
+            self.name = self.name.replace(u'] ', u']\n', 1)
 
         return result
