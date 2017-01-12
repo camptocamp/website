@@ -118,3 +118,9 @@ migration:
       addons:
         upgrade:
             - attachment_s3
+            - l10n_ch_bank
+            - l10n_ch_states
+            - l10n_ch_zip
+            - sale_product_set
+            - sale_product_set_layout
+            - specific_report

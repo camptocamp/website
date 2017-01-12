@@ -87,6 +87,10 @@
               font-size: 16px;
               padding-top: 65mm;
               }
+              h2 {
+              font-size: 16px;
+              padding-top: 65mm;
+              }
               h3 {
               font-size: 13px;
               }
