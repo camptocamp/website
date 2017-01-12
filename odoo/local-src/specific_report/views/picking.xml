@@ -4,76 +4,6 @@
     <template
       id="report_picking"
       inherit_id="delivery.report_shipping2">
-            <xpath expr="//div[@class='row']" position="before">
-        <style type="text/css">
-          body {
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                font-size: 50px;
-                color: #000 !important;
-                word-wrap: break-word;
-              }
-              .border-black td {
-                border-top: 1px solid black !important;
-              }
-              .table-condensed > thead > tr > th {
-                border-bottom: 1px solid black !important;
-              }
-              .table-condensed > tbody > tr {
-                page-break-inside: avoid !important;
-              }
-              .zero_min_height {
-                min-height: 0px !important;
-              }
-              body {
-              font-family: "DejaVu Sans";
-              font-size: 12px;
-              }
-              address.mb0 {
-              font-size: 12px;
-              }
-              h2 {
-              font-size: 16px;
-              padding-top: 65mm;
-              }
-              h3 {
-              font-size: 13px;
-              }
-              div.address-row {
-              position: absolute;
-              width: 100%;
-              height: 50mm;
-              top: 10mm;
-              }
-              div.left-address {
-              position: absolute;
-              }
-              div.envelope-window {
-              position: absolute;
-              left: 130mm;
-              }
-              div.fillin-block {
-              border-top: 1px solid #ddd;
-              }
-              div.fillin-header {
-              padding-left: 0pt;
-              }
-              div.fillin-space {
-              border-bottom: 1px solid #ddd;
-              }
-              div.fillin-separator {
-              padding-top: 5mm;
-              }
-              div.fillin-disclaimer {
-              padding-top: 10mm;
-              }
-              span.picking-barcode {
-              float: right;
-              }
-              div.barcode-spacer {
-              height: 10mm;
-              }
-        </style>
-      </xpath>
 
       <xpath expr="//div[@t-field='o.partner_id']" position="attributes">
         <!-- hide phone numbers -->
@@ -125,23 +55,89 @@
     <template
     id="report_picking"
     inherit_id="stock.report_picking">
+
+      <xpath expr="//div[@class='row']" position="before">
+        <style type="text/css">
+          body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 50px;
+                color: #000 !important;
+                word-wrap: break-word;
+              }
+              .border-black td {
+                border-top: 1px solid black !important;
+              }
+              .table-condensed > thead > tr > th {
+                border-bottom: 1px solid black !important;
+              }
+              .table-condensed > tbody > tr {
+                page-break-inside: avoid !important;
+              }
+              .zero_min_height {
+                min-height: 0px !important;
+              }
+              body {
+              font-family: "DejaVu Sans";
+              font-size: 12px;
+              }
+              address.mb0 {
+              font-size: 12px;
+              }
+              h1 {
+              font-size: 16px;
+              padding-top: 65mm;
+              }
+              h3 {
+              font-size: 13px;
+              }
+              div.address-row {
+              position: absolute;
+              width: 100%;
+              height: 50mm;
+              top: 10mm;
+              }
+              div.left-address {
+              position: absolute;
+              }
+              div.envelope-window {
+              position: absolute;
+              left: 130mm;
+              }
+              div.fillin-block {
+              border-top: 1px solid #ddd;
+              }
+              div.fillin-header {
+              padding-left: 0pt;
+              }
+              div.fillin-space {
+              border-bottom: 1px solid #ddd;
+              }
+              div.fillin-separator {
+              padding-top: 5mm;
+              }
+              div.fillin-disclaimer {
+              padding-top: 10mm;
+              }
+              span.picking-barcode {
+              float: right;
+              }
+              div.barcode-spacer {
+              height: 10mm;
+              }
+        </style>
+      </xpath>
+
       <xpath
         expr="//table[@t-if='o.pack_operation_ids']/thead/tr/th[1]"
         position="before">
         <th>Pos</th>
       </xpath>
-      <xpath
-        expr="//table[@t-if='o.pack_operation_ids']/thead/tr/th[1]"
-        position="inside">
-        toto
-      </xpath>
 
-<!-- The move_index doesn't seems to work -->
-<!--       <xpath expr="//span[@t-field='pack_operation.product_id']/../.." position="before">
+      <xpath expr="//span[@t-field='pack_operation.product_id']/.." position="before">
         <td>
-          <span t-esc="move_index + 1"/>
+          <span t-esc="pack_operation_index + 1"/>
         </td>
-      </xpath> -->
+      </xpath>
 
       <xpath expr="//span[@t-field='pack_operation.product_id']" position="attributes">
         <attribute name="t-field">pack_operation.with_context(display_default_code=False).product_id</attribute>
@@ -188,17 +184,15 @@
         <attribute name="class">left-address</attribute>
       </xpath>
 
-<!--       <xpath expr="//div[@class='page']/div[@class='row']/div/img/../.." position="replace"/>
- -->
-<!--       <xpath expr="//h1[@t-field='o.name']" position="after">
+      <xpath expr="//h1[@t-field='o.name']" position="after">
         <span class="picking-barcode">
           <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
         </span>
-      </xpath> -->
+      </xpath>
 
-<!--       <xpath expr="//h1" position="before">
+      <xpath expr="//h1" position="before">
         <div class="barcode-spacer"/>
-      </xpath> -->
+      </xpath>
 
     </template>
 
@@ -209,5 +203,14 @@
             </t>
         </t>
     </template>
+
+    <template id="external_layout_header_barcode_right_hide" inherit_id="stock.external_layout_header_barcode_right">
+      <xpath expr="//div[@name='right_box']" position="replace">
+        <div class="col-xs-4 pull-right mt8 hide" name="right_box">
+          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
+        </div>
+      </xpath>
+    </template>
+
 
 </odoo>
