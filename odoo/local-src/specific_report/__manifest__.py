@@ -35,10 +35,10 @@
              # 'mrp_repair',
              ],
  'website': 'http://www.camptocamp.com',
- 'data': ['views/detailed_quotation.xml', # TODO
+ 'data': ['views/detailed_quotation.xml',  # TODO
           'views/invoice.xml',  # TODO
           'views/layouts.xml',
-          'views/picking.xml', # '<xpath expr="//table[@t-if='not o.pack_operation_ids']/thead/tr/th[1]">' cannot be located in parent view
+          'views/picking.xml',
           'views/purchase.xml',
           # 'views/quotation.xml', # cannot find sale_layouted
           'views/repair.xml',
