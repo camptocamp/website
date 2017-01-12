@@ -5,6 +5,77 @@
       id="report_mrprepairorder"
       inherit_id="mrp_repair.report_mrprepairorder">
 
+      <xpath expr="//div[@class='row']" position="before">
+        <style type="text/css">
+          body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 50px;
+                color: #000 !important;
+                word-wrap: break-word;
+              }
+              .border-black td {
+                border-top: 1px solid black !important;
+              }
+              .table-condensed > thead > tr > th {
+                border-bottom: 1px solid black !important;
+              }
+              .table-condensed > tbody > tr {
+                page-break-inside: avoid !important;
+              }
+              .zero_min_height {
+                min-height: 0px !important;
+              }
+              body {
+              font-family: "DejaVu Sans";
+              font-size: 12px;
+              }
+              address.mb0 {
+              font-size: 12px;
+              }
+              h2 {
+              font-size: 16px;
+              padding-top: 65mm;
+              }
+              h3 {
+              font-size: 13px;
+              }
+              div.address-row {
+              position: absolute;
+              width: 100%;
+              height: 50mm;
+              top: 10mm;
+              }
+              div.left-address {
+              position: absolute;
+              }
+              div.envelope-window {
+              position: absolute;
+              left: 130mm;
+              }
+              div.fillin-block {
+              border-top: 1px solid #ddd;
+              }
+              div.fillin-header {
+              padding-left: 0pt;
+              }
+              div.fillin-space {
+              border-bottom: 1px solid #ddd;
+              }
+              div.fillin-separator {
+              padding-top: 5mm;
+              }
+              div.fillin-disclaimer {
+              padding-top: 10mm;
+              }
+              span.picking-barcode {
+              float: right;
+              }
+              div.barcode-spacer {
+              height: 10mm;
+              }
+        </style>
+      </xpath>
+
       <xpath
         expr="//table[@class='table table-condensed']/thead/tr/th[4]"
         position="after">
@@ -86,7 +157,7 @@
       <xpath expr="//p[@t-esc][1]/.." position="replace">
         <div class="col-xs-3">
           <strong>Date:</strong>
-          <p t-esc="env['res.lang'].datetime_formatter(context_timestamp(datetime.datetime.now()), template='MODE_DATETIME')"/>
+          <p t-esc="str(datetime.date.today())" t-esc-options='{"widget": "date"}'/>
         </div>
       </xpath>
 
