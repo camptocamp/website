@@ -60,3 +60,12 @@
     # port of base_transaction_id
     - oca refs/pull/165/head
   target: *default_target
+./external-src/l10n-switzerland:
+  remotes:
+    oca: git@github.com:OCA/l10n-switzerland.git
+    camptocamp: git@github.com:camptocamp/l10n-switzerland.git
+  merges:
+    - oca 10.0
+    # port l10n_ch_payment_slip
+    - oca refs/pull/295/head
+  target: *default_target

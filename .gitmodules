@@ -24,7 +24,7 @@
 	url = git@github.com:OCA/knowledge
 [submodule "odoo/external-src/l10n-switzerland"]
 	path = odoo/external-src/l10n-switzerland
-	url = git@github.com:OCA/l10n-switzerland
+	url = git@github.com:camptocamp/l10n-switzerland
 [submodule "odoo/external-src/partner-contact"]
 	path = odoo/external-src/partner-contact
 	url = git@github.com:OCA/partner-contact
