@@ -51,3 +51,12 @@
     # port from alexis-via
     - oca refs/pull/316/head
   target: *default_target
+./external-src/bank-statement-reconcile:
+  remotes:
+    oca: git@github.com:OCA/bank-statement-reconcile.git
+    camptocamp: git@github.com:camptocamp/bank-statement-reconcile.git
+  merges:
+    - oca 10.0
+    # port of base_transaction_id
+    - oca refs/pull/165/head
+  target: *default_target
