@@ -42,3 +42,12 @@
     # Migration of mail_environment to 10.0
     - oca refs/pull/662/head
   target: *default_target
+./external-src/purchase-workflow:
+  remotes:
+    oca: git@github.com:OCA/purchase-workflow.git
+    camptocamp: git@github.com:camptocamp/purchase-workflow.git
+  merges:
+    - oca 10.0
+    # port from alexis-via
+    - oca refs/pull/316/head
+  target: *default_target
