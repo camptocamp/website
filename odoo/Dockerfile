@@ -18,6 +18,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/account-analytic, \
   /opt/odoo/external-src/account-financial-reporting, \
   /opt/odoo/external-src/account-financial-tools, \
+  /opt/odoo/external-src/bank-payment, \
   /opt/odoo/external-src/bank-statement-reconcile, \
   /opt/odoo/external-src/event, \
   /opt/odoo/external-src/hr-timesheet, \

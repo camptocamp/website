@@ -55,3 +55,7 @@
 [submodule "odoo/external-src/odoo-cloud-platform"]
 	path = odoo/external-src/odoo-cloud-platform
 	url = git@github.com:camptocamp/odoo-cloud-platform
+[submodule "odoo/external-src/bank-payment"]
+	path = odoo/external-src/bank-payment
+	url = git@github.com:OCA/bank-payment.git
+	branch = 10.0
