@@ -26,21 +26,18 @@
  'category': 'Reports',
  'complexity': "normal",  # easy, normal, expert
  'depends': ['base',
-             # 'account',
              'sale',
-             # 'sale_layout',
              'purchase_discount',
-             # 'stock',
-             # 'delivery',
-             # 'mrp_repair',
+             'delivery',
+             'mrp_repair',
              ],
  'website': 'http://www.camptocamp.com',
- 'data': ['views/detailed_quotation.xml',  # TODO
-          'views/invoice.xml',  # TODO
+ 'data': ['views/detailed_quotation.xml',
+          'views/invoice.xml',
           'views/layouts.xml',
           'views/picking.xml',
           'views/purchase.xml',
-          # 'views/quotation.xml', # cannot find sale_layouted
+          # 'views/quotation.xml',
           'views/repair.xml',
           'views/report_paperformat.xml',
           ],
