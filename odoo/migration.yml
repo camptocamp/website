@@ -114,3 +114,7 @@ migration:
             - website_hr_recruitment
             - website_mail
             - website_partner
+    - version: 10.1.0
+      addons:
+        upgrade:
+            - attachment_s3
