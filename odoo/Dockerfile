@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:10.0-1.7.1
+FROM camptocamp/odoo-project:10.0-2.0.0
 MAINTAINER Camptocamp
 
 # Install additional debian packages if needed
@@ -10,8 +10,10 @@ MAINTAINER Camptocamp
 #         && rm -rf /var/lib/apt/lists/*
 
 # Install additional python packages if needed
-COPY ./requirements.txt ./
-RUN pip install -r requirements.txt
+COPY ./requirements.txt /opt/odoo
+RUN cd /opt/odoo && pip install -r requirements.txt
+
+COPY ./start-entrypoint.d/010_dev_set_db_storage /opt/odoo/start-entrypoint.d/010_dev_set_db_storage
 
 ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/src/addons, \
