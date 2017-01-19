@@ -97,7 +97,7 @@
       </xpath>
 
       <xpath expr="//span[@t-field='l.name']" position="after">
-          <span t-esc="l_index + 1"/>toto
+          <span t-esc="l_index + 1"/>
       </xpath>
 
       <xpath expr="//p[@t-field='o.name']/.." position="attributes">
@@ -128,16 +128,18 @@
             <div class="fillin-separator">IBAN</div>
           </div>
           <div class="col-xs-9">
-            <div class="fillin-separator">
-              <t t-if="o.company_id.partner_id.bank_ids[0].bank_name">
-                :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].bank_name"/>
-              </t>
-            </div>
-            <div class="fillin-separator">
-              <t t-if="o.company_id.partner_id.bank_ids[0].acc_number">
-                :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].acc_number"/>
-              </t>
-            </div>
+            <t t-if="o.company_id.partner_id.bank_ids">
+              <div class="fillin-separator">
+                <t t-if="o.company_id.partner_id.bank_ids[0].bank_name">
+                  :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].bank_name"/>
+                </t>
+              </div>
+              <div class="fillin-separator">
+                <t t-if="o.company_id.partner_id.bank_ids[0].acc_number">
+                  :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].acc_number"/>
+                </t>
+              </div>
+            </t>
           </div>
           <div class="col-xs-12 fillin-disclaimer">For further information please contact accounting@smartliberty.ch</div>
         </div>

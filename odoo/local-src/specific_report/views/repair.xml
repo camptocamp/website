@@ -88,14 +88,9 @@
         <th>Pos</th>
       </xpath>
 
-      <xpath expr="//t[@t-if='o.operations']" position="before">
-        <t t-set="pos" t-value="0"/>
-      </xpath>
-
       <xpath expr="//t[@t-if='(line.to_invoice is True)']/td[1]" position="before">
         <td>
-          <t t-set="pos" t-value="pos + 1"/>
-          <span t-esc="pos"/>
+          <span t-esc="line_index + 1"/>
         </td>
       </xpath>
 
@@ -149,8 +144,7 @@
 
       <xpath expr="//span[@t-field='fees.name']/.." position="before">
         <td>
-          <t t-set="pos" t-value="pos + 1"/>
-          <span t-esc="pos"/>
+          <span t-esc="line_index + 1"/>
         </td>
       </xpath>
 

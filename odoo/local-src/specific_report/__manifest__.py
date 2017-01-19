@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #
-#    Author: Denis Leemann
+#    Author: Leonardo Pistone, Denis Leemann
 #    Copyright 2017 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,6 @@
  'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
  'category': 'Reports',
- 'complexity': "normal",  # easy, normal, expert
  'depends': ['base',
              'sale',
              'purchase_discount',
@@ -37,7 +36,7 @@
           'views/layouts.xml',
           'views/picking.xml',
           'views/purchase.xml',
-          # 'views/quotation.xml',
+          'views/quotation.xml',
           'views/repair.xml',
           'views/report_paperformat.xml',
           ],

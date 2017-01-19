@@ -26,14 +26,12 @@ class SaleOrderLine(models.Model):
 
             line.product_code_description = result
 
-    @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
         vals = {}
         if not self.product_id:
             return {'domain': {'product_uom': []}}
         result = super(SaleOrderLine, self).product_id_change()
-        # name = result['value'] and result['value'].get('name')
         name = self.product_id.name_get()[0][1]
         if name:
             name = re.sub(r'\[.*?\] (.*)', r'\1', name)
