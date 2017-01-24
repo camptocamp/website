@@ -20,23 +20,35 @@ Unreleased
 ++++++++++
 
 **Features and Improvements**
-- Add l10m_ch_bank
-- Add l10n_ch_zip
-- Add  l10n_ch_states
-- Port sales_product_set
-- Port sales_product_set_layout
-- Add specific_report:
-  - Quotation / Sale Order.  Note: the order of columns has changed
-  - Invoice.  Note: There was two fields referring to the same place "Reference /  Description". This is now on the field "Description".
-  - Delivery.  Note: Some changes in the headers
-  - Purchase Order.  Note: there is not anymore the "validate by:" field
-  - Mrp / Quotation.  Note: 'Lot id' label is diplayed only if there is one.
 
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+10.1.0 (2017-01-24)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add l10n_ch_bank
+* Add l10n_ch_zip
+* Add  l10n_ch_states
+* Port sales_product_set
+* Port sales_product_set_layout
+* Add specific_report:
+  * Quotation / Sale Order.  Note: the order of columns has changed
+  * Invoice.  Note: There was two fields referring to the same place "Reference /  Description". This is now on the field "Description".
+  * Delivery.  Note: Some changes in the headers
+  * Purchase Order.  Note: there is not anymore the "validate by:" field
+  * Mrp / Quotation.  Note: 'Lot id' label is diplayed only if there is one.
+
+**Bugfixes**
+
+* Improves web performance thanks to a correction in attachment_s3
+
 
 10.0.0 (2016-12-22)
 +++++++++++++++++++
