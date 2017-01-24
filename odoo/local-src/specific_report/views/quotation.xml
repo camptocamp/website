@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_quotation_document"
+      inherit_id="sale.report_saleorder_document"
+      primary="True">
+
+      <!-- Removing all columns to keep only "pos/description/prics-->
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[7]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[6]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[5]"
+        position="replace"/>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[3]"
+        position="replace"/>
+
+      <xpath
+        expr="//span[@t-field='l.price_unit']/.."
+        position="replace"/>
+
+      <xpath
+        expr="//td[@t-if='display_discount']"
+        position="replace"/>
+
+      <xpath
+        expr="//t[@t-as='l']/tr/td[3]"
+        position="replace"/>
+
+      <xpath
+        expr="//span[@t-field='l.price_subtotal']/.."
+        position="replace"/>
+    </template>
+
+    <template id="report_saleorder_quotation">
+      <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="doc">
+          <t t-call="specific_report.report_quotation_document" t-lang="doc.partner_id.lang"/>
+        </t>
+      </t>
+    </template>
+
+
+    <report
+      id="action_report_quotation"
+      string="Quotation"
+      model="sale.order"
+      report_type="qweb-pdf"
+      file="specific_report.report_saleorder_quotation"
+      name="specific_report.report_saleorder_quotation"
+      paperformat="report.paperformat_euro"
+    />
+
+</odoo>

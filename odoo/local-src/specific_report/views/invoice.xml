@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+      id="report_invoice_document"
+      inherit_id="sale.report_invoice_layouted">
+
+      <xpath expr="//div[@class='row']" position="before">
+        <style type="text/css">
+          body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 50px;
+                color: #000 !important;
+                word-wrap: break-word;
+              }
+              .border-black td {
+                border-top: 1px solid black !important;
+              }
+              .table-condensed > thead > tr > th {
+                border-bottom: 1px solid black !important;
+              }
+              .table-condensed > tbody > tr {
+                page-break-inside: avoid !important;
+              }
+              .zero_min_height {
+                min-height: 0px !important;
+              }
+              body {
+              font-family: "DejaVu Sans";
+              font-size: 12px;
+              }
+              address.mb0 {
+              font-size: 12px;
+              }
+              h2 {
+              font-size: 16px;
+              padding-top: 65mm;
+              }
+              h3 {
+              font-size: 13px;
+              }
+              div.address-row {
+              position: absolute;
+              width: 100%;
+              height: 50mm;
+              top: 10mm;
+              }
+              div.left-address {
+              position: absolute;
+              }
+              div.envelope-window {
+              position: absolute;
+              left: 130mm;
+              }
+              div.fillin-block {
+              border-top: 1px solid #ddd;
+              }
+              div.fillin-header {
+              padding-left: 0pt;
+              }
+              div.fillin-space {
+              border-bottom: 1px solid #ddd;
+              }
+              div.fillin-separator {
+              padding-top: 5mm;
+              }
+              div.fillin-disclaimer {
+              padding-top: 10mm;
+              }
+              span.picking-barcode {
+              float: right;
+              }
+              div.barcode-spacer {
+              height: 10mm;
+              }
+        </style>
+      </xpath>
+
+      <xpath expr="//address/../.." position="attributes">
+        <attribute name="class">address-row</attribute>
+      </xpath>
+
+      <xpath expr="//address/.." position="attributes">
+        <attribute name="class">envelope-window</attribute>
+      </xpath>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[1]"
+        position="before">
+        <th>Pos</th>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.name']/.." position="before">
+        <td>
+          <span t-esc="l_index + 1"/>
+        </td>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.name']" position="after">
+          <span t-esc="l_index + 1"/>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.name']/.." position="attributes">
+        <attribute name="class">col-xs-3</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.date_invoice']/.." position="attributes">
+        <attribute name="class">col-xs-3</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.origin']/.." position="attributes">
+        <attribute name="class">col-xs-3</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.partner_id.ref']/.." position="attributes">
+        <attribute name="class">col-xs-3</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.reference']/.." position="attributes">
+        <attribute name="class">col-xs-3</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="after">
+        <div class="row mb32 ">
+          <div class="col-xs-12 fillin-block"><strong>Payment information</strong></div>
+          <div class="col-xs-3">
+            <div class="fillin-separator">Bank</div>
+            <div class="fillin-separator">IBAN</div>
+          </div>
+          <div class="col-xs-9">
+            <t t-if="o.company_id.partner_id.bank_ids">
+              <div class="fillin-separator">
+                <t t-if="o.company_id.partner_id.bank_ids[0].bank_name">
+                  :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].bank_name"/>
+                </t>
+              </div>
+              <div class="fillin-separator">
+                <t t-if="o.company_id.partner_id.bank_ids[0].acc_number">
+                  :&amp;nbsp;<span t-field="o.company_id.partner_id.bank_ids[0].acc_number"/>
+                </t>
+              </div>
+            </t>
+          </div>
+          <div class="col-xs-12 fillin-disclaimer">For further information please contact accounting@smartliberty.ch</div>
+        </div>
+      </xpath>
+
+    </template>
+
+</odoo>

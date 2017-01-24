@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+      id="report_mrprepairorder"
+      inherit_id="mrp_repair.report_mrprepairorder">
+
+      <xpath expr="//div[@class='row']" position="before">
+        <style type="text/css">
+          body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 50px;
+                color: #000 !important;
+                word-wrap: break-word;
+              }
+              .border-black td {
+                border-top: 1px solid black !important;
+              }
+              .table-condensed > thead > tr > th {
+                border-bottom: 1px solid black !important;
+              }
+              .table-condensed > tbody > tr {
+                page-break-inside: avoid !important;
+              }
+              .zero_min_height {
+                min-height: 0px !important;
+              }
+              body {
+              font-family: "DejaVu Sans";
+              font-size: 12px;
+              }
+              address.mb0 {
+              font-size: 12px;
+              }
+              h2 {
+              font-size: 16px;
+              padding-top: 65mm;
+              }
+              h3 {
+              font-size: 13px;
+              }
+              div.address-row {
+              position: absolute;
+              width: 100%;
+              height: 50mm;
+              top: 10mm;
+              }
+              div.left-address {
+              position: absolute;
+              }
+              div.envelope-window {
+              position: absolute;
+              left: 130mm;
+              }
+              div.fillin-block {
+              border-top: 1px solid #ddd;
+              }
+              div.fillin-header {
+              padding-left: 0pt;
+              }
+              div.fillin-space {
+              border-bottom: 1px solid #ddd;
+              }
+              div.fillin-separator {
+              padding-top: 5mm;
+              }
+              div.fillin-disclaimer {
+              padding-top: 10mm;
+              }
+              span.picking-barcode {
+              float: right;
+              }
+              div.barcode-spacer {
+              height: 10mm;
+              }
+        </style>
+      </xpath>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[4]"
+        position="after">
+        <th>Warranty</th>
+      </xpath>
+
+      <xpath
+        expr="//table[@class='table table-condensed']/thead/tr/th[1]"
+        position="before">
+        <th>Pos</th>
+      </xpath>
+
+      <xpath expr="//t[@t-if='(line.to_invoice is True)']/td[1]" position="before">
+        <td>
+          <span t-esc="line_index + 1"/>
+        </td>
+      </xpath>
+
+      <xpath expr="//t[@t-if='(line.to_invoice is True)'][1]" position="attributes">
+        <attribute name="t-if">True</attribute>
+      </xpath>
+
+      <xpath expr="//t[@t-if='fees.to_invoice is True'][1]" position="attributes">
+        <attribute name="t-if">True</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='line.price_unit']/.." position="after">
+        <td class="text-center">
+          <t t-if="line.to_invoice">
+            <input type="checkbox" disabled="disabled" />
+          </t>
+          <t t-if="not line.to_invoice">
+            <input type="checkbox" disabled="disabled" checked="unchecked"/>
+          </t>
+        </td>
+      </xpath>
+
+      <xpath expr="//span[@t-field='fees.price_unit']/.." position="after">
+        <td class="text-center">
+          <t t-if="fees.to_invoice">
+            <input type="checkbox" disabled="disabled" />
+          </t>
+          <t t-if="not fees.to_invoice">
+            <input type="checkbox" disabled="disabled" checked="unchecked"/>
+          </t>
+        </td>
+      </xpath>
+
+      <xpath expr="//span[@t-field='line.price_unit']" position="replace">
+          <t t-if="line.to_invoice">
+            <span t-field="line.price_unit"/>
+          </t>
+          <t t-if="not line.to_invoice">
+            <span>0.00</span>
+          </t>
+      </xpath>
+
+      <xpath expr="//span[@t-field='fees.price_unit']" position="replace">
+          <t t-if="fees.to_invoice">
+            <span t-field="fees.price_unit"/>
+          </t>
+          <t t-if="not fees.to_invoice">
+            <span>0.00</span>
+          </t>
+      </xpath>
+
+      <xpath expr="//span[@t-field='fees.name']/.." position="before">
+        <td>
+          <span t-esc="line_index + 1"/>
+        </td>
+      </xpath>
+
+      <xpath expr="//p[@t-esc][1]/.." position="replace">
+        <div class="col-xs-3">
+          <strong>Date:</strong>
+          <p t-esc="str(datetime.date.today())" t-esc-options='{"widget": "date"}'/>
+        </div>
+      </xpath>
+
+      <xpath expr="//strong[@t-if='o.address_id == o.partner_invoice_id']/.." position="replace">
+
+        <div class="col-xs-6">
+
+          <t t-if="o.partner_invoice_id and o.partner_invoice_id != o.partner_id">
+            <p t-if="o.address_id == o.partner_invoice_id">Invoice and shipping address:</p>
+            <p t-if="o.address_id != o.partner_invoice_id">Invoice address: </p>
+            <div t-field="o.partner_invoice_id"
+              t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+            <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+          </t>
+
+          <div t-if="o.address_id and o.address_id != o.partner_id and o.address_id != o.partner_invoice_id">
+            <p>Shipping address :</p>
+            <div t-field="o.address_id"
+              t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+            <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+          </div>
+
+        </div>
+
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.product_id.name']/.." position="after">
+        <div t-if="o.product_id.name" class="col-xs-3">
+          <strong>Quantity</strong>
+          <p>
+            <span t-field="o.product_qty"/>
+            <span groups="product.group_uom" t-field="o.product_uom"/>
+          </p>
+        </div>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.product_id.name']" position="attributes">
+        <attribute name="t-field">o.product_id</attribute>
+      </xpath>
+
+      <xpath expr="//p[@t-field='o.quotation_notes']" position="after">
+
+        <div class="row mb32 ">
+          <div class="col-xs-12 fillin-block"><strong>Confirmation of repair</strong></div>
+          <div class="col-xs-6">
+            <div class="col-xs-4 fillin-header fillin-separator">Location</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-4 fillin-header fillin-separator">Name(s)</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="col-xs-4 fillin-header fillin-separator">Date</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-4 fillin-header fillin-separator">Signature(s)</div>
+            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+          </div>
+          <div class="col-xs-12 fillin-disclaimer">For further information please contact rma@smartliberty.ch</div>
+        </div>
+
+      </xpath>
+
+      <xpath expr="//div[@t-field='o.partner_id']/../.." position="attributes">
+        <attribute name="class">address-row</attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-field='o.partner_invoice_id']/.." position="attributes">
+        <attribute name="class">left-address</attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-field='o.partner_id']/.." position="attributes">
+        <attribute name="class">envelope-window</attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-if='o.guarantee_limit']" position="after">
+        <div t-if="o.analytic_account_id" class="col-xs-3">
+          <strong>Analytic Account:</strong>
+          <p t-field="o.analytic_account_id"/>
+        </div>
+      </xpath>
+
+    </template>
+
+    <template id="report_mrprepair">
+      <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+          <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'mrp_repair.report_mrprepairorder')"/>
+        </t>
+      </t>
+    </template>
+
+
+    <record id="view_repair_order_form_inherit" model="ir.ui.view">
+        <field name="name">mrp.repair.form.inherit</field>
+        <field name="model">mrp.repair</field>
+        <field name="inherit_id" ref="mrp_repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+            <field name="pricelist_id" position="after">
+                <field name="analytic_account_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
