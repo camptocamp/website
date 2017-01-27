@@ -116,19 +116,19 @@
         </h2>
       </xpath>
 
-      <xpath expr="//strong[contains(., 'Your Reference:')]" position="replace">
+      <xpath expr="//div[@id='informations']/div[@t-if='doc.client_order_ref']/strong" position="replace">
         <strong>Your Reference</strong>
       </xpath>
 
-      <xpath expr="//strong[contains(., 'Date Ordered:')]" position="replace">
-        <strong>Date Ordered</strong>
+      <xpath expr="//div[@id='informations']/div[@t-if='doc.date_order']" position="replace">
+        <div t-if="doc.date_order" class="col-xs-3">
+          <strong t-if="doc.state not in ['draft','sent']">Date Ordered</strong>
+          <strong t-if="doc.state in ['draft','sent']">Quotation Date</strong>
+          <p t-field="doc.date_order"/>
+        </div>
       </xpath>
 
-      <xpath expr="//strong[contains(., 'Quotation Date:')]" position="replace">
-        <strong>Quotation Date</strong>
-      </xpath>
-
-      <xpath expr="//strong[contains(., 'Salesperson:')]" position="replace">
+      <xpath expr="//div[@id='informations']/div[@t-if='doc.user_id.name']/strong" position="replace">
         <strong>Salesperson</strong>
       </xpath>
 

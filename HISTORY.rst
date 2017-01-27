@@ -21,6 +21,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Add translations
+
 **Bugfixes**
 
 **Build**
