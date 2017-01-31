@@ -21,8 +21,6 @@ Unreleased
 
 **Features and Improvements**
 
-* Add translations
-
 **Bugfixes**
 
 **Build**
@@ -46,6 +44,7 @@ Unreleased
   * Delivery.  Note: Some changes in the headers
   * Purchase Order.  Note: there is not anymore the "validate by:" field
   * Mrp / Quotation.  Note: 'Lot id' label is diplayed only if there is one.
+  * Translations
 
 **Bugfixes**
 
