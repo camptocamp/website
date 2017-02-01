@@ -21,6 +21,7 @@ Unreleased
 
 **Features and Improvements**
 
+
 **Bugfixes**
 
 **Build**
@@ -45,6 +46,8 @@ Unreleased
   * Purchase Order.  Note: there is not anymore the "validate by:" field
   * Mrp / Quotation.  Note: 'Lot id' label is diplayed only if there is one.
   * Translations
+* Add specific_fct:
+  * Add total to inventory valuation + field in pivot view
 
 **Bugfixes**
 
