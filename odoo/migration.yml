@@ -115,6 +115,9 @@ migration:
             - website_mail
             - website_partner
     - version: 10.1.0
+      operations:
+        post:
+          - anthem songs.updates.update_10_1_0.update::main
       addons:
         upgrade:
             - attachment_s3
@@ -125,10 +128,3 @@ migration:
             - sale_product_set_layout
             - specific_report
             - specific_fct
-    - version: 10.1.1
-      operations:
-        post:
-          - anthem songs.updates.update_10_1_1.update::main
-      addons:
-        upgrade:
-          - specific_report
