@@ -36,7 +36,7 @@ def update_lang_format(ctx):
         'thousands_sep': "'",
         'grouping': '[3,0]',
         'decimal_point': '.',
-        'date_format': '%d. %m. %Y',
+        'date_format': '%d.%m.%Y',
         'time_format': '%H:%M:%S',
     }
     for lang in langs:
