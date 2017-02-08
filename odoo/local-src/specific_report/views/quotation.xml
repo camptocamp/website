@@ -18,7 +18,7 @@
         position="replace"/>
 
       <xpath
-        expr="//table[@class='table table-condensed']/thead/tr/th[3]"
+        expr="//table[@class='table table-condensed']/thead/tr/th[4]"
         position="replace"/>
 
       <xpath
@@ -30,7 +30,7 @@
         position="replace"/>
 
       <xpath
-        expr="//t[@t-as='l']/tr/td[3]"
+        expr="//span[@t-field='l.price_subtotal']/../preceding::td[1]"
         position="replace"/>
 
       <xpath
