@@ -62,6 +62,12 @@ def update_bvr_layout_settings(ctx):
     company.write(vals)
 
 
+def set_decimal_precision(ctx):
+    """Updating decimal precision"""
+    prod_uom = ctx.env.ref('product.decimal_product_uom')
+    prod_uom.write({'digits': 1})
+
+
 @anthem.log
 def main(ctx):
     """ Loading data """
@@ -70,3 +76,4 @@ def main(ctx):
     set_sales_settings(ctx)
     update_lang_format(ctx)
     update_bvr_layout_settings(ctx)
+    set_decimal_precision(ctx)
