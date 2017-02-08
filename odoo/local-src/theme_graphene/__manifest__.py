@@ -1,10 +1,10 @@
 {
-    'name':'Graphene theme',
+    'name': 'Graphene theme',
     'description': 'Light colours, thin text, clean and sharp design.',
     'category': 'Theme/Corporate',
     'sequence': 110,
-    'version':'1.0',
-    'author':'Odoo S.A.',
+    'version': '1.0',
+    'author': 'Odoo S.A.',
     'data': [
         'views/assets.xml',
         'views/customize_modal.xml',
