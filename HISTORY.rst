@@ -21,12 +21,19 @@ Unreleased
 
 **Features and Improvements**
 
-
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+10.2.0 (2017-02-08)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add Graphene theme (bought from Odoo SA)
 
 
 10.1.0 (2017-01-24)
