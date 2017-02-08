@@ -100,10 +100,12 @@
 
       <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace"/>
 
+      <!-- Add pos in lines -->
       <xpath expr="//table[@class='table table-condensed']/thead/tr/th[1]" position="before">
         <th>Pos</th>
       </xpath>
 
+      <!-- Change document title -->
       <xpath expr="//div[@class='page']/h2" position="replace">
         <h2>
           <span t-if="doc.state not in ['draft','sent']">Order </span>
@@ -112,10 +114,10 @@
         </h2>
       </xpath>
 
+      <!-- Update labels in information div-->
       <xpath expr="//div[@id='informations']/div[@t-if='doc.client_order_ref']/strong" position="replace">
         <strong>Your Reference</strong>
       </xpath>
-
       <xpath expr="//div[@id='informations']/div[@t-if='doc.date_order']" position="replace">
         <div t-if="doc.date_order" class="col-xs-3">
           <strong t-if="doc.state not in ['draft','sent']">Date Ordered</strong>
@@ -123,21 +125,23 @@
           <p t-field="doc.date_order"/>
         </div>
       </xpath>
-
       <xpath expr="//div[@id='informations']/div[@t-if='doc.user_id.name']/strong" position="replace">
         <strong>Salesperson</strong>
       </xpath>
 
+      <!-- Add position number in lines -->
       <xpath expr="//span[@t-field='l.name']/.." position="before">
         <td>
           <span t-esc="l_index + 1"/>
         </td>
       </xpath>
 
+      <!-- format order date -->
       <xpath expr="//p[@t-field='doc.date_order']" position="attributes">
         <attribute name="t-field-options">{"widget": "date"}</attribute>
       </xpath>
 
+      <!-- Document end note -->
       <xpath expr="//p[@t-field='doc.note']" position="after">
 
         <div class="row mb32 ">

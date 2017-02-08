@@ -27,6 +27,8 @@ def set_sales_settings(ctx):
     sale_config.create({'group_sale_layout': 1}).execute()
     # UOM in Sale Lines
     sale_config.create({'group_uom': 1}).execute()
+    # Discount on So lines
+    sale_config.create({'group_discount_per_so_line': 1}).execute()
 
 
 @anthem.log
