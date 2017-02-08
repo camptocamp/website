@@ -137,3 +137,7 @@ migration:
         upgrade:
             - specific_fct
             - snippet_latest_posts
+    - version: 10.3.0
+      operations:
+        post:
+          - anthem songs.updates.update_10_3_0.update::main
