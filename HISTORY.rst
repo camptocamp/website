@@ -22,12 +22,7 @@ Unreleased
 **Features and Improvements**
 
 * Add decimal precision of 6 on product volume
-
-**Bugfixes**
-
-**Build**
-
-**Documentation**
+* Add "Latest posts" snippet module
 
 
 10.2.0 (2017-02-08)

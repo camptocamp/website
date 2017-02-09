@@ -132,3 +132,8 @@ migration:
       addons:
         upgrade:
             - theme_graphene
+    - version: 10.2.1
+      addons:
+        upgrade:
+            - specific_fct
+            - snippet_latest_posts
