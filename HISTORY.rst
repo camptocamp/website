@@ -21,6 +21,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Add decimal precision of 6 on product volume
+
 **Bugfixes**
 
 **Build**
