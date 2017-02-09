@@ -21,6 +21,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.2.1 (2017-02-09)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add decimal precision of 6 on product volume
 * Add "Latest posts" snippet module
 
