@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-14 19:32+0000\n"
-"PO-Revision-Date: 2017-02-14 19:32+0000\n"
+"POT-Creation-Date: 2017-02-14 21:00+0000\n"
+"PO-Revision-Date: 2017-02-14 21:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr "<strong>Due Date</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Invoice Date</strong>"
-msgstr "<strong>Invoice Date</strong>"
+msgstr "<strong>Rechnungsdatum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
@@ -116,6 +116,11 @@ msgid "<strong>Source</strong>"
 msgstr "<strong>Quelle</strong>"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "<strong>Subtotal </strong>"
+msgstr "<strong>Subtotal </strong>"
+
+#. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Subtotal</strong>"
 msgstr "<strong>Zwischensumme</strong>"
@@ -149,14 +154,20 @@ msgid "Date of the offer"
 msgstr "Datum des Angebots"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Discount (%)"
 msgstr "Rabatt (%)"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
-msgid "For further information please contact accounting@smartliberty.ch"
-msgstr "For further information please contact accounting@smartliberty.ch"
+msgid "For any questions, please contact accounting@smartliberty.ch"
+msgstr "Für Rückfragen melden Sie sich bitte bei accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -248,6 +259,11 @@ msgid "Pos"
 msgstr "Pos"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "Price"
+msgstr "Preis"
+
+#. module: specific_report
 #: model:ir.model.fields,field_description:specific_report.field_sale_order_line_product_code_description
 msgid "Product code and description"
 msgstr "Product code and description"
@@ -261,6 +277,11 @@ msgstr "Purchase Order Confirmation"
 #: model:ir.model,name:specific_report.model_purchase_order_line
 msgid "Purchase Order Line"
 msgstr "Bestellpositionen"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "Quantity"
+msgstr "Anzahl"
 
 #. module: specific_report
 #: model:ir.actions.report.xml,name:specific_report.action_report_quotation
@@ -296,6 +317,12 @@ msgid "Signature(s)"
 msgstr "Unterschrift(en)"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Unit price"
 msgstr "Stückpreis"
