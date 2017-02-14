@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-14 17:23+0000\n"
-"PO-Revision-Date: 2017-02-14 17:23+0000\n"
+"POT-Creation-Date: 2017-02-14 19:22+0000\n"
+"PO-Revision-Date: 2017-02-14 19:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid ":&amp;nbsp;"
-msgstr ""
+msgstr ":&amp;nbsp;"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -31,32 +31,37 @@ msgstr "<span>&amp;nbsp;</span>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<span>0.00</span>"
-msgstr ""
+msgstr "<span>0.00</span>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Analytic Account:</strong>"
-msgstr ""
+msgstr "<strong>Analytic Account:</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<strong>Confirmation of delivery</strong>"
-msgstr ""
+msgstr "<strong>Confirmation of delivery</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Confirmation of repair</strong>"
-msgstr ""
+msgstr "<strong>Confirmation of repair</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Customer Code</strong>"
-msgstr ""
+msgstr "<strong>Customer Code</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Date:</strong>"
-msgstr ""
+msgstr "<strong>Date :</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "<strong>Delivery address</strong>"
+msgstr "<strong>Adresse de livraison</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -66,18 +71,23 @@ msgstr "<strong>Description</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Due Date</strong>"
-msgstr ""
+msgstr "<strong>Due Date</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Invoice Date</strong>"
-msgstr ""
+msgstr "<strong>Invoice Date</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Order</strong>"
 msgstr "<strong>Commande</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "<strong>Payment conditions</strong>"
+msgstr "<strong>Conditions de paiement</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -91,38 +101,39 @@ msgstr "<strong>Quantité</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Reference</strong>"
 msgstr "<strong>Référence</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "<strong>Salesperson</strong>"
+msgid "<strong>Sales consultant</strong>"
 msgstr "<strong>Conseiller de vente</strong>"
-
-#. module: specific_report
-#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "<strong>Shipping address</strong>"
-msgstr "<strong>Adresse de livraison</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Source</strong>"
-msgstr ""
+msgstr "<strong>Origine</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "<strong>Your Reference</strong>"
-msgstr "<strong>Référence</strong>"
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Sous-total</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "<strong>Total without taxes</strong>"
+msgstr "<strong>Total hors taxes</strong>"
 
 #. module: specific_report
 #: model:ir.model.fields,field_description:specific_report.field_mrp_repair_analytic_account_id
 msgid "Analytic Account"
-msgstr ""
+msgstr "Compte analytique"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "Bank"
-msgstr ""
+msgstr "Banque"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -130,42 +141,47 @@ msgstr ""
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Date"
-msgstr "Date"
+msgstr "Date "
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "Date Ordered"
-msgstr ""
+msgid "Date of the offer"
+msgstr "Date de l'offre"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "Discount (%)"
+msgstr "Rabais (%)"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "For further information please contact accounting@smartliberty.ch"
-msgstr ""
+msgstr "For further information please contact accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "For further information please contact rma@smartliberty.ch"
-msgstr ""
+msgstr "For further information please contact rma@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "IBAN"
-msgstr ""
+msgstr "IBAN"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Ligne de facture"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Invoice address:"
-msgstr ""
+msgstr "Adresse de facturation :"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Invoice and shipping address:"
-msgstr "Adresse de facturation et de livraison"
+msgstr "Adresse de facturation et de livraison :"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
@@ -174,14 +190,13 @@ msgstr "Adresse de facturation"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "Invoicing and shipping address"
-msgstr ""
+msgid "Invoicing and delivery address"
+msgstr "Adresse de facturation et de livraison"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Location"
 msgstr "Lieu"
 
@@ -195,19 +210,33 @@ msgstr "Nom(s)"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "Offer"
+msgstr "Offre"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Order"
-msgstr ""
+msgstr "Commande"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partenaire"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "Place"
+msgstr "Lieu"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "Please return this document dated and signed by mail or as PDF by e-mail to orders@smartliberty.ch"
+msgstr "Merci de retourner ce document daté et signé par poste ou par e-mail en PDF à orders@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
-msgstr ""
+msgstr "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -221,48 +250,42 @@ msgstr "Pos"
 #. module: specific_report
 #: model:ir.model.fields,field_description:specific_report.field_sale_order_line_product_code_description
 msgid "Product code and description"
-msgstr ""
+msgstr "Product code and description"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 msgid "Purchase Order Confirmation"
-msgstr ""
+msgstr "Purchase Order Confirmation"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr ""
+msgstr "Ligne de bon de commande"
 
 #. module: specific_report
 #: model:ir.actions.report.xml,name:specific_report.action_report_quotation
-#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Quotation"
-msgstr "Offre"
-
-#. module: specific_report
-#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
-msgid "Quotation Date"
-msgstr "Date de l'offre"
+msgstr "Devis"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_mrp_repair
 msgid "Repair Order"
-msgstr ""
+msgstr "Ordre de réparation"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 msgid "Request for Quotation"
-msgstr ""
+msgstr "Demande de prix"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
+msgstr "Ligne de bons de commande"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Shipping address :"
-msgstr ""
+msgstr "Adresse de Livraison"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -273,16 +296,21 @@ msgid "Signature(s)"
 msgstr "Signature(s)"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+msgid "Unit price"
+msgstr "Prix unitaire"
+
+#. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "VAT:"
-msgstr ""
+msgstr "TVA :"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Warranty"
-msgstr ""
+msgstr "Garantie"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
-msgstr ""
+msgstr "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
