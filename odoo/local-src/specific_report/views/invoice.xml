@@ -87,21 +87,40 @@
         </div>
       </xpath>
 
-      <xpath
-        expr="//table[@class='table table-condensed']/thead/tr/th[1]"
-        position="before">
-        <th>Pos</th>
+      <xpath expr="//t[@groups='sale.group_sale_layout']/table/thead" position="replace">
+        <thead>
+          <tr>
+            <th>Pos</th>
+              <th>Description</th>
+              <th class="text-right">Quantity</th>
+              <th class="text-right">Unit price</th>
+              <th t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+              <th class="text-right">Taxes</th>
+              <th class="text-right price_tax_included">Price</th>
+          </tr>
+        </thead>
       </xpath>
 
+      <!-- Lines position in non layouted report-->
       <xpath expr="//span[@t-field='l.name']/.." position="before">
         <td>
           <span t-esc="l_index + 1"/>
         </td>
       </xpath>
-
       <xpath expr="//span[@t-field='l.name']" position="after">
           <span t-esc="l_index + 1"/>
       </xpath>
+
+      <!-- Line position in layouted reports -->
+      <xpath expr="//t[@t-as='l']/tr/td[1]" position="before">
+        <td>
+          <span t-esc="l_index + 1"/>
+        </td>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']" position="after">
+          <span t-esc="l_index + 1"/>
+      </xpath>
+
 
       <xpath expr="//p[@t-field='o.name']/.." position="attributes">
         <attribute name="class">col-xs-3</attribute>
@@ -123,6 +142,7 @@
         <attribute name="class">col-xs-3</attribute>
       </xpath>
 
+      <!-- End document informations -->
       <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="after">
         <div class="row mb32 ">
           <div class="col-xs-12 fillin-block"><strong>Payment information</strong></div>
@@ -144,10 +164,11 @@
               </div>
             </t>
           </div>
-          <div class="col-xs-12 fillin-disclaimer">For further information please contact accounting@smartliberty.ch</div>
+          <div class="col-xs-12 fillin-disclaimer">For any questions, please contact accounting@smartliberty.ch</div>
         </div>
       </xpath>
 
+      <!-- Informations in beginning of document -->
       <xpath expr="//div[@t-if='o.name']/.." position="replace">
         <div class="row mt32 mb32">
           <div class="col-xs-2" t-if="o.name">
@@ -176,6 +197,14 @@
           </div>
         </div>
       </xpath>
+
+      <!-- Label at end of section -->
+      <xpath expr="//t[@t-set='subtotal']/../strong" position="replace">
+        <strong>Subtotal </strong>
+      </xpath>
+
+      <!-- Total at end of document -->
+
 
     </template>
 
