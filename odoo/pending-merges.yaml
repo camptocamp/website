@@ -69,3 +69,12 @@
     # port l10n_ch_payment_slip
     - oca refs/pull/295/head
   target: *default_target
+./external-src/enterprise:
+  remotes:
+    odoo: git@github.com:odoo/enterprise.git
+    camptocamp: git@github.com:camptocamp/enterprise.git
+  merges:
+    - odoo 10.0
+    # unaccent PersonName in Consignee tag
+    - odoo refs/pull/783/head
+  target: *default_target
