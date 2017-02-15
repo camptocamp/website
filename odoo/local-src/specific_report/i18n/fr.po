@@ -51,7 +51,7 @@ msgstr "<strong>Confirmation of repair</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Customer Code</strong>"
-msgstr "<strong>Customer Code</strong>"
+msgstr "<strong>Numéro de client</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -71,7 +71,7 @@ msgstr "<strong>Description</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Due Date</strong>"
-msgstr "<strong>Due Date</strong>"
+msgstr "<strong>Date d'échéance</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -87,12 +87,18 @@ msgstr "<strong>Commande</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Payment conditions</strong>"
-msgstr "<strong>Conditions de paiement</strong>"
+msgstr "<strong>Informations de paiement</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Payment information</strong>"
-msgstr "<strong>Conditions de paiement</strong>"
+msgstr "<strong>Informations de paiement</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "<strong>Comment</strong>"
+msgstr "<strong>Commentaire</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -117,13 +123,20 @@ msgstr "<strong>Origine</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
-msgid "<strong>Subtotal </strong>"
-msgstr "<strong>Sous-total</strong>"
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Total hors taxes</strong>"
+
+#. module: account
+#: model:ir.ui.view,arch_db:account.report_invoice_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Total hors taxes</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Subtotal</strong>"
 msgstr "<strong>Sous-total</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
@@ -139,6 +152,11 @@ msgstr "Compte analytique"
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "Bank"
 msgstr "Banque"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "For any questions, please contact accounting@smartliberty.ch"
+msgstr "Pour tout renseignement complémentaire, veuillez contacter accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder

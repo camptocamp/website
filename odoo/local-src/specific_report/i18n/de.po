@@ -92,7 +92,7 @@ msgstr "<strong>Zahlungskonditionen</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Payment information</strong>"
-msgstr "<strong>Payment information</strong>"
+msgstr "<strong>Zahlungsinformationen</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -124,6 +124,12 @@ msgstr "<strong>Subtotal </strong>"
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Subtotal</strong>"
 msgstr "<strong>Zwischensumme</strong>"
+
+#. module: account
+#: model:ir.ui.view,arch_db:account.report_invoice_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Total ohne steuern</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
@@ -173,6 +179,12 @@ msgstr "Für Rückfragen melden Sie sich bitte bei accounting@smartliberty.ch"
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "For further information please contact rma@smartliberty.ch"
 msgstr "For further information please contact rma@smartliberty.ch"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_invoice_document
+msgid "<strong>Comment</strong>"
+msgstr "<strong>Kommentar</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
