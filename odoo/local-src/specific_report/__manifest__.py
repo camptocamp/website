@@ -29,6 +29,7 @@
              'purchase_discount',
              'delivery',
              'mrp_repair',
+             'account_payment_partner',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/detailed_quotation.xml',
