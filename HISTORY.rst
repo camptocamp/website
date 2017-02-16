@@ -28,6 +28,26 @@ Unreleased
 **Documentation**
 
 
+10.3.0 (2017-02-16)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Reports corrections:
+  * activate settings (proforma, discount, uom, group_sale_layout)
+  * update lang formats (en,fr,de)
+  * Addresses in 'Quotation / Order' & 'Quotation'
+  * Lines in 'Quotation'
+  * Addresses in Invoices
+  * Information labels in invoice
+* Configure BVR details for main bank
+* Add module "sale_manual_delivery"
+
+**Bugfixes**
+
+* Re-install all modules to correct missing ones from 10.0.0
+
+
 10.2.1 (2017-02-09)
 +++++++++++++++++++
 
