@@ -73,7 +73,7 @@ def set_decimal_precision(ctx):
 @anthem.log
 def main(ctx):
     """ Loading data """
-    # reload_translation(ctx, 'specific_report')
+    reload_translation(ctx, 'specific_report')
     set_settings_proforma(ctx)
     set_sales_settings(ctx)
     update_lang_format(ctx)
