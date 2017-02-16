@@ -75,79 +75,91 @@
         </style>
       </xpath>
 
-
-      <xpath expr="//div[@t-field='doc.partner_invoice_id']/../.." position="attributes">
-        <attribute name="class">address-row</attribute>
-      </xpath>
-
-      <xpath expr="//div[@t-field='doc.partner_invoice_id']/.." position="attributes">
-        <attribute name="class">left-address</attribute>
-      </xpath>
-
-      <xpath expr="//div[@t-field='doc.partner_id']/.." position="attributes">
-        <attribute name="class">envelope-window</attribute>
-      </xpath>
-
-      <xpath expr="//div[@t-field='doc.partner_invoice_id']" position="attributes">
-        <!-- hide phone numbers -->
-        <attribute name="t-field-options">
-          {"widget": "contact", "fields": ["address", "name"], "no_marker": true}
-        </attribute>
-      </xpath>
-
-      <xpath expr="//div[@t-field='doc.partner_shipping_id']" position="attributes">
-        <!-- hide phone numbers -->
-        <attribute name="t-field-options">
-          {"widget": "contact", "fields": ["address", "name"], "no_marker": true}
-        </attribute>
+    <!-- Replace adresses -->
+      <xpath expr="//div[@class='page']/div[@class='row'][1]" position="replace">
+        <div class="row address-row">
+            <div class="col-xs-6 left-address">
+                <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and delivery address</strong>
+                <strong t-if="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing address</strong>
+                <div t-field="doc.partner_invoice_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True, "phone_icons": True}'
+                    />
+                <div t-if="doc.partner_shipping_id != doc.partner_invoice_id" class="mt8">
+                    <strong>Delivery address</strong>
+                    <div t-field="doc.partner_shipping_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True, "phone_icons": True}'/>
+                </div>
+            </div>
+            <div class="col-xs-5 col-xs-offset-1 envelope-window">
+                <div t-field="doc.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+                    />
+            </div>
+        </div>
       </xpath>
 
       <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace"/>
 
+      <!-- Change table's label for lines -->
+      <xpath expr="//table[@class='table table-condensed']/thead/tr/th[3]" position="replace">
+        <th class="text-right">Unit price</th>
+      </xpath>
+      <xpath expr="//table[@class='table table-condensed']/thead/tr/th[4]" position="replace">
+        <th t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+      </xpath>
+
+
+      <!-- Add pos in lines -->
       <xpath expr="//table[@class='table table-condensed']/thead/tr/th[1]" position="before">
         <th>Pos</th>
       </xpath>
 
+      <!-- Change document title -->
       <xpath expr="//div[@class='page']/h2" position="replace">
         <h2>
           <span t-if="doc.state not in ['draft','sent']">Order </span>
-          <span t-if="doc.state in ['draft','sent']">Quotation </span>
+          <span t-if="doc.state in ['draft','sent']">Offer </span>
           <span t-field="doc.name"/>
         </h2>
       </xpath>
 
+      <!-- Update labels in information div-->
       <xpath expr="//div[@id='informations']/div[@t-if='doc.client_order_ref']/strong" position="replace">
-        <strong>Your Reference</strong>
+        <strong>Reference</strong>
       </xpath>
-
       <xpath expr="//div[@id='informations']/div[@t-if='doc.date_order']" position="replace">
         <div t-if="doc.date_order" class="col-xs-3">
-          <strong t-if="doc.state not in ['draft','sent']">Date Ordered</strong>
-          <strong t-if="doc.state in ['draft','sent']">Quotation Date</strong>
+          <strong t-if="doc.state not in ['draft','sent']">Date of the offer</strong>
+          <strong t-if="doc.state in ['draft','sent']">Date of the offer</strong>
           <p t-field="doc.date_order"/>
         </div>
       </xpath>
-
       <xpath expr="//div[@id='informations']/div[@t-if='doc.user_id.name']/strong" position="replace">
-        <strong>Salesperson</strong>
+        <strong>Sales consultant</strong>
+      </xpath>
+      <xpath expr="//div[@id='informations']/div[@t-if='doc.payment_term_id']/strong" position="replace">
+        <strong>Payment conditions</strong>
       </xpath>
 
+      <!-- Add position number in lines -->
       <xpath expr="//span[@t-field='l.name']/.." position="before">
         <td>
           <span t-esc="l_index + 1"/>
         </td>
       </xpath>
 
+      <!-- format order date -->
       <xpath expr="//p[@t-field='doc.date_order']" position="attributes">
         <attribute name="t-field-options">{"widget": "date"}</attribute>
       </xpath>
 
+      <!-- Document end note -->
       <xpath expr="//p[@t-field='doc.note']" position="after">
 
         <div class="row mb32 ">
           <div class="col-xs-12 fillin-block"><strong>Order</strong></div>
           <div class="col-xs-6">
-            <div class="col-xs-4 fillin-header fillin-separator">Location</div>
+            <div class="col-xs-4 fillin-header fillin-separator">Place</div>
             <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
             <div class="col-xs-4 fillin-header fillin-separator">Name(s)</div>
             <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
@@ -158,13 +170,23 @@
             <div class="col-xs-4 fillin-header fillin-separator">Signature(s)</div>
             <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
           </div>
-          <div class="col-xs-12 fillin-disclaimer">Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch</div>
+          <div class="col-xs-12 fillin-disclaimer">Please return this document dated and signed by mail or as PDF by e-mail to orders@smartliberty.ch</div>
         </div>
 
       </xpath>
 
       <xpath expr="//span[@t-field='l.name']" position="attributes">
         <attribute name="t-field">l.product_code_description</attribute>
+      </xpath>
+
+      <!-- Total at end of document -->
+      <xpath expr="//div[@name='total']/div/table/tr/td" position="replace">
+        <td><strong>Total without taxes</strong></td>
+      </xpath>
+
+      <!-- Subtotal -->
+      <xpath expr="//t[@t-set='subtotal']/../strong" position="replace">
+        <strong>Subtotal</strong>
       </xpath>
 
     </template>
