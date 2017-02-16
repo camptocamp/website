@@ -71,6 +71,16 @@ def set_decimal_precision(ctx):
 
 
 @anthem.log
+def update_bank_bvr(ctx):
+    ctx.env.cr.execute("""
+        UPDATE res_partner_bank
+        SET bvr_adherent_num = '10635100',
+        print_partner = True
+        WHERE id = 1;
+    """)
+
+
+@anthem.log
 def main(ctx):
     """ Loading data """
     reload_translation(ctx, 'specific_report')
@@ -79,3 +89,4 @@ def main(ctx):
     update_lang_format(ctx)
     update_bvr_layout_settings(ctx)
     set_decimal_precision(ctx)
+    update_bank_bvr(ctx)
