@@ -222,6 +222,7 @@ migration:
             - resource
             - sale
             - sale_crm
+            - sale_manual_delivery
             - sale_margin
             - sale_mrp
             - sale_order_revision

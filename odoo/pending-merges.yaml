@@ -69,6 +69,15 @@
     # port l10n_ch_payment_slip
     - oca refs/pull/295/head
   target: *default_target
+./external-src/sale-workflow:
+  remotes:
+    oca: git@github.com:OCA/sale-workflow.git
+    camptocamp: git@github.com:camptocamp/sale-workflow.git
+  merges:
+    - oca 10.0
+    # sale_manual_delivery
+    - oca refs/pull/404/head
+  target: *default_target
 ./external-src/enterprise:
   remotes:
     odoo: git@github.com:odoo/enterprise.git
