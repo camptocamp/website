@@ -47,7 +47,7 @@ msgstr "<strong>Confirmation de livraison</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Confirmation of repair</strong>"
-msgstr "<strong>Confirmation of repair</strong>"
+msgstr "<strong>Confirmation de réparation</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -211,8 +211,8 @@ msgstr "For further information please contact accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "For further information please contact rma@smartliberty.ch"
-msgstr "For further information please contact rma@smartliberty.ch"
+msgid "For further information please contact support@smartliberty.ch"
+msgstr "Pour toute information complémentaire, veuillez contacter support@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document

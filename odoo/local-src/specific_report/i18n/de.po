@@ -47,7 +47,7 @@ msgstr "<strong>Lieferbestätigung</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Confirmation of repair</strong>"
-msgstr "<strong>Confirmation of repair</strong>"
+msgstr "<strong>Bestätigung der Reparaturr</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -231,8 +231,8 @@ msgstr "Für Rückfragen melden Sie sich bitte bei accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "For further information please contact rma@smartliberty.ch"
-msgstr "For further information please contact rma@smartliberty.ch"
+msgid "For further information please contact support@smartliberty.ch"
+msgstr "Für Rückfragen melden Sie sich bitte bei support@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -410,7 +410,7 @@ msgstr "USt."
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Warranty"
-msgstr "Warranty"
+msgstr "Garantie"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document

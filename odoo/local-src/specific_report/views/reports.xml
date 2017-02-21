@@ -18,4 +18,14 @@
             file="stock.report_picking_operations"
         />
 
+        <report
+            string="Quotation / Order"
+            id="mrp_repair.action_report_mrp_repair_order"
+            model="mrp.repair"
+            name="specific_report.report_mrprepair"
+            file="mrp_repair.report_mrprepairorder"
+            report_type="qweb-pdf"
+        />
+
+
 </odoo>
