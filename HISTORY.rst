@@ -28,6 +28,20 @@ Unreleased
 **Documentation**
 
 
+10.3.1 (2017-02-21)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Changes in reports
+
+**Bugfixes**
+
+* Fixes in sale_manual_delivery:
+  * Wizard not displayed in the SO
+  * 1 picking is now created per manual delivery
+
+
 10.3.0 (2017-02-16)
 +++++++++++++++++++
 
