@@ -250,3 +250,8 @@ migration:
             - website_hr_recruitment
             - website_mail
             - website_partner
+    - version: 10.3.1
+      addons:
+        upgrade:
+            - sale_manual_delivery
+            - specific_report

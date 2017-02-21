@@ -21,7 +21,13 @@ Unreleased
 
 **Features and Improvements**
 
+* Changes in reports
+
 **Bugfixes**
+
+* Fixes in sale_manual_delivery:
+  * Wizard not displayed in the SO
+  * 1 picking is now created per manual delivery
 
 **Build**
 
