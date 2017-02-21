@@ -429,3 +429,8 @@ msgstr "<strong>Status</strong>"
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
 msgstr "Mit seiner Unterschrift bestätigt der Kunde die in diesem Dokument aufgelisteten Produkte erhalten zu haben. Bitte melden Sie Probleme sofort an logistics@smartliberty.ch"
+
+#. module: mrp_repair
+#: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
+msgid "<strong>Operation Line(s)</strong>"
+msgstr "<strong>Bedienzeile</strong>"
