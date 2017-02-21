@@ -40,13 +40,14 @@ msgstr "<strong>Analytic Account:</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "<strong>Confirmation of delivery</strong>"
-msgstr "<strong>Confirmation of delivery</strong>"
+msgstr "<strong>Lieferbestätigung</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "<strong>Confirmation of repair</strong>"
-msgstr "<strong>Confirmation of repair</strong>"
+msgstr "<strong>Bestätigung der Reparaturr</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -130,11 +131,64 @@ msgstr "<strong>Zwischensumme</strong>"
 msgid "<strong>Subtotal</strong>"
 msgstr "<strong>Total ohne steuern</strong>"
 
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "Purchase Order Confirmation"
+msgstr "Bestellung"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "Request for Quotation"
+msgstr "Preisanfrage"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Total without taxes</strong>"
 msgstr "<strong>Total ohne steuern</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Total ohne Steuern</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>Project</strong>"
+msgstr "<strong>Projekt</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>Customer Reference</strong>"
+msgstr "<strong>Kundenreferenz</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>Scheduled Date</strong>"
+msgstr "<strong>Geplanter Datum</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>State</strong>"
+msgstr "<strong>Status</strong>"
+
+#. module: stock
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+msgid "<strong>Product</strong>"
+msgstr "<strong>Produkt</strong>"
+
+#. module: stock
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Anzahl</strong>"
 
 #. module: specific_report
 #: model:ir.model.fields,field_description:specific_report.field_mrp_repair_analytic_account_id
@@ -177,8 +231,8 @@ msgstr "Für Rückfragen melden Sie sich bitte bei accounting@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "For further information please contact rma@smartliberty.ch"
-msgstr "For further information please contact rma@smartliberty.ch"
+msgid "For further information please contact support@smartliberty.ch"
+msgstr "Für Rückfragen melden Sie sich bitte bei support@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -220,6 +274,7 @@ msgstr "Rechnungs- und Lieferadresse"
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Location"
 msgstr "Veranstaltungsort"
 
@@ -228,6 +283,7 @@ msgstr "Veranstaltungsort"
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Name(s)"
 msgstr "Name(n)"
 
@@ -259,7 +315,7 @@ msgstr "Bitte dieses Dokument per Post oder per E-mail als PDF an orders@smartli
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 msgid "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
-msgstr "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
+msgstr "Bitte dieses Dokument per Post oder per E-mail als PDF an orders@smartliberty.ch zurücksenden"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -269,6 +325,12 @@ msgstr "Please return with date and signature my mail, or scan to PDF and email 
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Pos"
 msgstr "Pos"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Net Price</strong>"
+msgstr "<strong>Preis</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -325,6 +387,7 @@ msgstr "Versandadresse :"
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Signature(s)"
 msgstr "Unterschrift(en)"
 
@@ -347,9 +410,27 @@ msgstr "USt."
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Warranty"
-msgstr "Warranty"
+msgstr "Garantie"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>Order (Origin)</strong>"
+msgstr "<strong>Bestellung</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<strong>State</strong>"
+msgstr "<strong>Status</strong>"
+
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
-msgstr "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
+msgstr "Mit seiner Unterschrift bestätigt der Kunde die in diesem Dokument aufgelisteten Produkte erhalten zu haben. Bitte melden Sie Probleme sofort an logistics@smartliberty.ch"
+
+#. module: mrp_repair
+#: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
+msgid "<strong>Operation Line(s)</strong>"
+msgstr "<strong>Bedienzeile</strong>"

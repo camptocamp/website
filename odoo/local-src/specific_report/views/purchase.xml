@@ -109,12 +109,18 @@
         </td>
       </xpath>
 
+      <xpath expr="//span[@t-field='line.date_planned']" position="attributes">
+        <attribute name="t-field-options">{"widget": "date"}</attribute>
+      </xpath>
+
       <xpath expr="//p[@t-field='o.date_order']" position="attributes">
         <attribute name="t-field-options">{"widget": "date"}</attribute>
       </xpath>
 
-      <xpath expr="//div[@class='page']/h2" position="replace">
+      <xpath expr="//div[@class='page']/h2[1]" position="replace">
         <h2 t-if="o.state != 'draft'">Purchase Order Confirmation <span t-field="o.name"/></h2>
+      </xpath>
+      <xpath expr="//div[@class='page']/h2[2]" position="replace">
         <h2 t-if="o.state == 'draft'">Request for Quotation <span t-field="o.name"/></h2>
       </xpath>
 
@@ -122,16 +128,16 @@
         <div class="row mb32 ">
           <div class="col-xs-12 fillin-block"><strong>Order</strong></div>
           <div class="col-xs-6">
-            <div class="col-xs-4 fillin-header fillin-separator">Location</div>
-            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
-            <div class="col-xs-4 fillin-header fillin-separator">Name(s)</div>
-            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-5 fillin-header fillin-separator">Location</div>
+            <div class="col-xs-7 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-5 fillin-header fillin-separator">Name(s)</div>
+            <div class="col-xs-7 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
           </div>
           <div class="col-xs-6">
-            <div class="col-xs-4 fillin-header fillin-separator">Date</div>
-            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
-            <div class="col-xs-4 fillin-header fillin-separator">Signature(s)</div>
-            <div class="col-xs-8 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-5 fillin-header fillin-separator">Date</div>
+            <div class="col-xs-7 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
+            <div class="col-xs-5 fillin-header fillin-separator">Signature(s)</div>
+            <div class="col-xs-7 fillin-space fillin-separator"> <span>&amp;nbsp;</span> </div>
           </div>
           <div class="col-xs-12 fillin-disclaimer">Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch</div>
         </div>

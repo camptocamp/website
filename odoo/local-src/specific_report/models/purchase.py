@@ -28,3 +28,15 @@ class PurchaseLine(models.Model):
             self.name = self.name.replace(u'] ', u']\n', 1)
 
         return result
+
+
+class PurchaseOrder(models.Model):
+    _inherit = 'purchase.order'
+
+    @api.multi
+    def print_quotation(self):
+        self.write({'state': "sent"})
+        return {
+            'type': 'ir.actions.report.xml',
+            'report_name': 'purchase.report_purchaseorder',
+        }

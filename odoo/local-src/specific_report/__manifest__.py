@@ -40,6 +40,8 @@
           'views/quotation.xml',
           'views/repair.xml',
           'views/report_paperformat.xml',
+          'views/deliveryslip.xml',
+          'views/reports.xml',
           ],
  'installable': True,
  'auto_install': False,
