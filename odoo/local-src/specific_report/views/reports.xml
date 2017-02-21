@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report
+            string="Request for Quotation" 
+            id="purchase.report_purchase_quotation"
+            model="purchase.order" 
+            report_type="qweb-pdf"
+            name="purchase.report_purchaseorder"
+            file="purchase.report_purchaseorder"
+        />
+
+        <report
+            string="Picking Operations"
+            id="stock.action_report_picking"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="specific_report.report_picking_report"
+            file="stock.report_picking_operations"
+        />
+
+</odoo>

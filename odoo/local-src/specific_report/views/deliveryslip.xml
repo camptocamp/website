@@ -2,9 +2,8 @@
 <odoo>
 
     <template
-    id="report_picking"
-    inherit_id="delivery.report_shipping2">
-
+      id="report_delivery_document"
+      inherit_id="sale_stock.report_delivery_document_inherit_sale_stock">
       <xpath expr="//div[@class='row']" position="before">
         <style type="text/css">
           body {
@@ -80,13 +79,20 @@
         </style>
       </xpath>
 
-      <xpath expr="//div[@class='col-xs-5 col-xs-offset-1']" position="replace">
-            <div class="col-xs-5 col-xs-offset-1">
-                <div t-if="o.partner_id" name="partner_header">
-                    <div t-field="o.partner_id"
-                       t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'/>
-                </div>
+
+    <xpath expr="//div[@name='customer_address']" position="replace">
+      <div class="row" name="customer_address">
+        <div class="col-xs-4 pull-right">
+            <div t-if="o.partner_id" name="partner_header">
+                <div t-field="o.partner_id"
+                   t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
             </div>
+        </div>
+      </div>
+    </xpath>
+
+       <xpath expr="//p[@t-field='o.sale_id.client_order_ref']/.." position="replace">
+        <!-- hide client order ref -->
       </xpath>
 
       <xpath expr="//table[@class='table table-condensed']" position="replace">
@@ -123,20 +129,30 @@
             </table>
       </xpath>
 
-      <xpath
-        expr="//table[@t-if='o.pack_operation_ids']/thead/tr/th[1]"
-        position="before">
-        <th>Pos</th>
-      </xpath>
 
-      <xpath expr="//span[@t-field='pack_operation.product_id']/.." position="before">
-        <td>
-          <span t-esc="pack_operation_index + 1"/>
-        </td>
-      </xpath>
 
-      <xpath expr="//span[@t-field='pack_operation.product_id']" position="attributes">
-        <attribute name="t-field">pack_operation.with_context(display_default_code=False).product_id</attribute>
+      <xpath expr="//table[@t-if='o.pack_operation_ids']" position="replace">
+        <table class="table table-condensed mt48" t-if="o.pack_operation_ids">
+            <thead>
+                <tr>
+                    <th><strong>Pos</strong></th>
+                    <th><strong>Product</strong></th>
+                    <th><strong>Quantity</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.move_lines" t-as="move">
+                    <td>
+                      <span t-esc="move_index + 1"/>
+                    </td>
+                    <td><span t-field="move.product_id"/></td>
+                    <td>
+                        <span t-field="move.ordered_qty"/>
+                        <span t-field="move.product_uom"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
       </xpath>
 
       <xpath expr="//table[@t-if='o.pack_operation_ids']" position="after">
@@ -158,45 +174,7 @@
         </div>
       </xpath>
 
-      <xpath expr="//div[@name='partner_header']/../.." position="attributes">
-        <attribute name="class">address-row</attribute>
-      </xpath>
-
-      <xpath expr="//div[@name='partner_header']/.." position="attributes">
-        <attribute name="class">envelope-window</attribute>
-      </xpath>
-
-      <xpath expr="//div[@t-field='o.move_lines[0].partner_id']/../.." position="attributes">
-        <attribute name="class">left-address</attribute>
-      </xpath>
-
-      <xpath expr="//h1[@t-field='o.name']" position="after">
-        <span class="picking-barcode">
-          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
-        </span>
-      </xpath>
-
-      <xpath expr="//h1" position="before">
-        <div class="barcode-spacer"/>
-      </xpath>
 
     </template>
-
-    <template id="report_picking_report">
-        <t t-call="report.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="stock.report_picking" t-lang="o.partner_id.lang"/>
-            </t>
-        </t>
-    </template>
-
-    <template id="external_layout_header_barcode_right_hide" inherit_id="stock.external_layout_header_barcode_right">
-      <xpath expr="//div[@name='right_box']" position="replace">
-        <div class="col-xs-4 pull-right mt8 hide" name="right_box">
-          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
-        </div>
-      </xpath>
-    </template>
-
 
 </odoo>
