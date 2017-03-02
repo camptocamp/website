@@ -255,3 +255,4 @@ migration:
         upgrade:
             - sale_manual_delivery
             - specific_report
+    - version: 10.3.2

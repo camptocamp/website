@@ -16,16 +16,12 @@
 Release History
 ---------------
 
-Unreleased
-++++++++++
 
-**Features and Improvements**
+10.3.2 (2017-03-02)
++++++++++++++++++++
 
 **Bugfixes**
-
-**Build**
-
-**Documentation**
+* Fix keep normal picking assign if not manual delivery
 
 
 10.3.1 (2017-02-21)
