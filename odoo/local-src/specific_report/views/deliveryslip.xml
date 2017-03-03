@@ -81,7 +81,7 @@
 
 
     <xpath expr="//div[@name='customer_address']" position="replace">
-      <div class="row" name="customer_address">
+      <div class="row address-row">
         <div class="col-xs-5 col-xs-offset-1 envelope-window">
             <div t-if="o.partner_id" name="partner_header">
                 <div t-field="o.partner_id"
