@@ -172,7 +172,7 @@ msgstr "<strong>Kundenreferenz</strong>"
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<strong>Scheduled Date</strong>"
-msgstr "<strong>Geplanter Datum</strong>"
+msgstr "<strong>Datum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
@@ -276,7 +276,7 @@ msgstr "Rechnungs- und Lieferadresse"
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Location"
-msgstr "Veranstaltungsort"
+msgstr "Ort"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -427,10 +427,17 @@ msgstr "<strong>Status</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+msgid "With his signature, the customer confirms that all products listed in this document have been delivered. Please notify immediately any problems to logistics@smartliberty.ch."
 msgstr "Mit seiner Unterschrift bestätigt der Kunde die in diesem Dokument aufgelisteten Produkte erhalten zu haben. Bitte melden Sie Probleme sofort an logistics@smartliberty.ch"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Operation Line(s)</strong>"
 msgstr "<strong>Bedienzeile</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<span>Delivery note</span>"
+msgstr "<span>Lieferschein</span>"
