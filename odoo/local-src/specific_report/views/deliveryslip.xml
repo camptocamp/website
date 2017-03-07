@@ -98,21 +98,17 @@
       <xpath expr="//table[@class='table table-condensed']" position="replace">
 
              <div class="row mt32 mb32">
-                <div class="col-xs-2" t-if="o.origin">
+                <div class="col-xs-3" t-if="o.origin">
                     <strong>Order (Origin)</strong>
                     <p t-field="o.origin"/>
-                </div>
-                <div class="col-xs-2" t-if="o.state">
-                    <strong>State</strong>
-                    <p t-field="o.state"/>
                 </div>
                 <div class="col-xs-3" t-if="o.min_date">
                     <strong>Scheduled Date</strong>
                     <p t-field="o.min_date"/>
                 </div>
-                <div class="col-xs-2" t-if="o.sale_id.project_id">
+                <div class="col-xs-3" t-if="o.sale_id.project_id">
                     <strong>Project</strong>
-                    <p t-field="o.sale_id.project_id"/>
+                    <p t-field="o.sale_id.project_id.name"/>
                 </div>
                 <div class="col-xs-3" t-if="o.sale_id.client_order_ref">
                     <strong>Customer Reference</strong>
