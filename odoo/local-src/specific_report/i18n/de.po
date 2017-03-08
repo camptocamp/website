@@ -72,12 +72,12 @@ msgstr "<strong>Beschreibung</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Due Date</strong>"
-msgstr "<strong>Due Date</strong>"
+msgstr "<strong>Zahlbar bis</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Invoice Date</strong>"
-msgstr "<strong>Rechnungsdatum</strong>"
+msgstr "<strong>Datum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
