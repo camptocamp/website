@@ -88,7 +88,7 @@ msgstr "<strong>Commande</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Payment conditions</strong>"
-msgstr "<strong>Informations de paiement</strong>"
+msgstr "<strong>Conditions de paiement</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
