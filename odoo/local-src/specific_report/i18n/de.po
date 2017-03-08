@@ -449,10 +449,10 @@ msgstr "<strong>Lieferanschrift</strong>"
 msgid "<strong>Unit Price</strong>"
 msgstr "<strong>Stückpreis</strong>"
 
-#. module: purchase
-#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
-msgid "Disc. (%)"
-msgstr "Rabatt (%)"
+#. module: purchase_discount
+#: model:ir.ui.view,arch_db:purchase_discount.report_purchaseorder_document
+msgid "<strong>Disc. (%)</strong>"
+msgstr "<strong>Rabatt (%)</strong>"
 
 #. module: purchase
 #: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document

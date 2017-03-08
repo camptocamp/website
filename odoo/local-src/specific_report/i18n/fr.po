@@ -463,10 +463,10 @@ msgstr "<strong>Notre référence</strong>"
 msgid "<strong>Shipping address</strong>"
 msgstr "<strong>Adresse de livraison</strong>"
 
-#. module: purchase
-#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
-msgid "Disc. (%)"
-msgstr "Rabais (%)"
+#. module: purchase_discount
+#: model:ir.ui.view,arch_db:purchase_discount.report_purchaseorder_document
+msgid "<strong>Disc. (%)</strong>"
+msgstr "<strong>Rabais (%)</strong>"
 
 #. module: purchase
 #: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document

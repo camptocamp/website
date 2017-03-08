@@ -366,9 +366,9 @@ msgstr ""
 msgid "<strong>Unit Price</strong>"
 msgstr ""
 
-#. module: purchase
-#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
-msgid "Disc. (%)"
+#. module: purchase_discount
+#: model:ir.ui.view,arch_db:purchase_discount.report_purchaseorder_document
+msgid "<strong>Disc. (%)</strong>"
 msgstr ""
 
 #. module: purchase
