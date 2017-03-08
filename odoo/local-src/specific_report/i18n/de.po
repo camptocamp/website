@@ -97,6 +97,7 @@ msgstr "<strong>Zahlungsinformationen</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Menge</strong>"
 
@@ -295,7 +296,7 @@ msgstr "Angebot"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Order"
-msgstr "Auftrag"
+msgstr "Bestellung"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_res_partner

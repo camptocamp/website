@@ -256,3 +256,11 @@ migration:
             - sale_manual_delivery
             - specific_report
     - version: 10.3.2
+    - version: 10.3.3
+      operations:
+        post:
+          - anthem songs.updates.update_10_3_3.update::main
+      addons:
+        upgrade:
+            - sale_manual_delivery
+            - specific_report
