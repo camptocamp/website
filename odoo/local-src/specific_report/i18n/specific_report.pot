@@ -85,6 +85,16 @@ msgid "<strong>Order</strong>"
 msgstr ""
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Order Date</strong>"
+msgstr ""
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Our Order Reference</strong>"
+msgstr ""
+
+#. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Payment conditions</strong>"
 msgstr ""
@@ -108,6 +118,11 @@ msgstr ""
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Sales consultant</strong>"
+msgstr ""
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Shipping address</strong>"
 msgstr ""
 
 #. module: specific_report
@@ -207,8 +222,12 @@ msgstr ""
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 msgid "Location"
+msgstr ""
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "Place"
 msgstr ""
 
 #. module: specific_report
@@ -246,7 +265,7 @@ msgstr ""
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
+msgid "Please send the order confirmation as PDF by e-mail to logistics@smartliberty.ch"
 msgstr ""
 
 #. module: specific_report
@@ -270,7 +289,7 @@ msgstr ""
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Purchase Order Confirmation"
+msgid "Purchase Order"
 msgstr ""
 
 #. module: specific_report
@@ -340,4 +359,19 @@ msgstr ""
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
+msgstr ""
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Unit Price</strong>"
+msgstr ""
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "Disc. (%)"
+msgstr ""
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Net Price</strong>"
 msgstr ""
