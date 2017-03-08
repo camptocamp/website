@@ -35,8 +35,8 @@ msgstr "<span>0.00</span>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "<strong>Analytic Account:</strong>"
-msgstr "<strong>Analytic Account:</strong>"
+msgid "<strong>Project</strong>"
+msgstr "<strong>Projekt</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
@@ -56,8 +56,8 @@ msgstr "<strong>Customer Code</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "<strong>Date:</strong>"
-msgstr "<strong>Datum:</strong>"
+msgid "<strong>Date</strong>"
+msgstr "<strong>Datum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
@@ -72,12 +72,12 @@ msgstr "<strong>Beschreibung</strong>"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Due Date</strong>"
-msgstr "<strong>Due Date</strong>"
+msgstr "<strong>Zahlbar bis</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
 msgid "<strong>Invoice Date</strong>"
-msgstr "<strong>Rechnungsdatum</strong>"
+msgstr "<strong>Datum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
@@ -97,6 +97,7 @@ msgstr "<strong>Zahlungsinformationen</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+#: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Menge</strong>"
 
@@ -172,7 +173,7 @@ msgstr "<strong>Kundenreferenz</strong>"
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<strong>Scheduled Date</strong>"
-msgstr "<strong>Geplanter Datum</strong>"
+msgstr "<strong>Datum</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
@@ -276,7 +277,7 @@ msgstr "Rechnungs- und Lieferadresse"
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Location"
-msgstr "Veranstaltungsort"
+msgstr "Ort"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
@@ -295,7 +296,7 @@ msgstr "Angebot"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Order"
-msgstr "Auftrag"
+msgstr "Bestellung"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_res_partner
@@ -427,10 +428,34 @@ msgstr "<strong>Status</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+msgid "With his signature, the customer confirms that all products listed in this document have been delivered. Please notify immediately any problems to logistics@smartliberty.ch."
 msgstr "Mit seiner Unterschrift bestätigt der Kunde die in diesem Dokument aufgelisteten Produkte erhalten zu haben. Bitte melden Sie Probleme sofort an logistics@smartliberty.ch"
 
 #. module: mrp_repair
 #: model:ir.ui.view,arch_db:mrp_repair.report_mrprepairorder
 msgid "<strong>Operation Line(s)</strong>"
 msgstr "<strong>Bedienzeile</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<span>Delivery note</span>"
+msgstr "<span>Lieferschein</span>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "<strong>Product to Repair</strong>"
+msgstr "<strong>Zu reparierendes Produkt</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "Confirmation of repair / intervention"
+msgstr "Reparaturbestätigung / Einsatzbestätigung"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "Repair / Intervention"
+msgstr "Reparatur / Einsatz"
+
+

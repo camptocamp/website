@@ -101,20 +101,14 @@
         </thead>
       </xpath>
 
-      <!-- Lines position in non layouted report-->
-      <xpath expr="//span[@t-field='l.name']/.." position="before">
+      <!-- Line position in layouted reports -->
+      <xpath expr="//t[@t-as='l']/tr/td[1]" position="replace">
         <td>
           <span t-esc="l_index + 1"/>
         </td>
-      </xpath>
-      <xpath expr="//span[@t-field='l.name']" position="after">
-          <span t-esc="l_index + 1"/>
-      </xpath>
-
-      <!-- Line position in layouted reports -->
-      <xpath expr="//t[@t-as='l']/tr/td[1]" position="before">
         <td>
-          <span t-esc="l_index + 1"/>
+        [<span t-field="l.product_id.default_code"/>]<br/>
+            <span t-field="l.product_id.name"/>
         </td>
       </xpath>
       <xpath expr="//span[@t-field='l.name']" position="after">

@@ -35,8 +35,8 @@ msgstr "<span>0.00</span>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "<strong>Analytic Account:</strong>"
-msgstr "<strong>Analytic Account:</strong>"
+msgid "<strong>Project</strong>"
+msgstr "<strong>Projet</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
@@ -56,8 +56,8 @@ msgstr "<strong>Numéro de client</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
-msgid "<strong>Date:</strong>"
-msgstr "<strong>Date :</strong>"
+msgid "<strong>Date</strong>"
+msgstr "<strong>Date</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
@@ -179,7 +179,7 @@ msgstr "<strong>Etat</strong>"
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<strong>Scheduled Date</strong>"
-msgstr "<strong>Date planifiée</strong>"
+msgstr "<strong>Date</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
@@ -451,5 +451,26 @@ msgstr "Garantie"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
-msgid "With this signature, the customer confirms that all products listed in this document have been delivered. Please notify any discrepancies to logistics@smartliberty.ch."
+msgid "With his signature, the customer confirms that all products listed in this document have been delivered. Please notify immediately any problems to logistics@smartliberty.ch."
 msgstr "Par sa signature, le client confirme avoir reçu tous les produits listés dans ce document. Merci d'informer immédiatement logistics@smartliberty.ch en cas de problèmes."
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_delivery_document
+#: model:ir.ui.view,arch_db:specific_report.report_picking
+msgid "<span>Delivery mote</span>"
+msgstr "<span>Bulletin de livraison</span>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "<strong>Product to Repair</strong>"
+msgstr "<strong>Produit à réparer</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "Confirmation of repair / intervention"
+msgstr "Confirmation de réparation / intervention"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
+msgid "Repair / Intervention"
+msgstr "Réparation / Intervention"
