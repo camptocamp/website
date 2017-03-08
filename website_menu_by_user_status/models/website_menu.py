@@ -18,10 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import logging
-_logger = logging.getLogger(__name__)
-from openerp import models, fields
-from openerp.tools.translate import _
+
+from odoo import models, fields, _
 
 
 class WebsiteMenu(models.Model):
