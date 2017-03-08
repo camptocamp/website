@@ -12,6 +12,7 @@ def reload_translation(ctx, module):
     ctx.env['ir.module.module'].with_context(overwrite=True).search(
         [('name', '=', module)]).update_translations()
 
+
 @anthem.log
 def main(ctx):
     """ Loading data """
