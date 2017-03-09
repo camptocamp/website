@@ -84,6 +84,6 @@
     camptocamp: git@github.com:camptocamp/enterprise.git
   merges:
     - odoo 10.0
-    # unaccent PersonName in Consignee tag
-    - odoo refs/pull/783/head
+    # Update account_financial_html_report_data.xml
+    - odoo refs/pull/817/head
   target: *default_target
