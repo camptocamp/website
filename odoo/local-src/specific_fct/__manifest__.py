@@ -27,9 +27,11 @@
  'depends': ['stock',
              'product',
              'sale_stock',
+             'base'
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/stock.xml',
+          'views/partner.xml',
           'data/product_data.xml',
           ],
  'installable': True,
