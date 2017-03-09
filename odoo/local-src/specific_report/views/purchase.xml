@@ -130,10 +130,10 @@
       </xpath>
 
       <xpath expr="//div[@class='page']/h2[1]" position="replace">
-        <h2 t-if="o.state != 'draft'">Purchase Order <span t-field="o.name"/></h2>
+        <h2 t-if="o.state not in ('draft','sent')">Purchase Order <span t-field="o.name"/></h2>
       </xpath>
       <xpath expr="//div[@class='page']/h2[2]" position="replace">
-        <h2 t-if="o.state == 'draft'">Request for Quotation <span t-field="o.name"/></h2>
+        <h2 t-if="o.state in ('draft', 'sent')">Request for Quotation <span t-field="o.name"/></h2>
       </xpath>
 
       <xpath expr="//p[@t-field='o.notes']" position="after">

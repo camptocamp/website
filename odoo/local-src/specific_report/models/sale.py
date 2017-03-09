@@ -32,11 +32,13 @@ class SaleOrderLine(models.Model):
         if not self.product_id:
             return {'domain': {'product_uom': []}}
         result = super(SaleOrderLine, self).product_id_change()
-        name = self.product_id.name_get()[0][1]
+        name = self.product_id.with_context(
+            lang=self.order_id.partner_id.lang).name_get()[0][1]
         if name:
             name = re.sub(r'\[.*?\] (.*)', r'\1', name)
             if self.product_id.description_sale:
-                name += '\n' + self.product_id.description_sale
+                name += '\n' + self.product_id.with_context(
+                    lang=self.order_id.partner_id.lang).description_sale
             vals['name'] = name
             self.update(vals)
 

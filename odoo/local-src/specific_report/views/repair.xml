@@ -76,6 +76,14 @@
         </style>
       </xpath>
 
+      <xpath  expr="//h2" position="replace">
+        <h2>
+            <span t-if="o.state != 'draft'">Confirmation of repair / intervention </span>
+            <span t-if="o.state == 'draft'">Repair / Intervention </span>
+            <span t-field="o.name"/>
+        </h2>
+      </xpath>
+
       <xpath
         expr="//table[@class='table table-condensed']/thead/tr/th[4]"
         position="after">
@@ -144,13 +152,13 @@
 
       <xpath expr="//span[@t-field='fees.name']/.." position="before">
         <td>
-          <span t-esc="line_index + 1"/>
+          <span t-esc="fees_index + 1"/>
         </td>
       </xpath>
 
       <xpath expr="//p[@t-esc][1]/.." position="replace">
         <div class="col-xs-3">
-          <strong>Date:</strong>
+          <strong>Date</strong>
           <p t-esc="str(datetime.date.today())" t-esc-options='{"widget": "date"}'/>
         </div>
       </xpath>
@@ -225,10 +233,19 @@
         <attribute name="class">envelope-window</attribute>
       </xpath>
 
+      <xpath expr="//div[@t-if='o.product_id.name']" position="replace">
+        <div t-if="o.product_id.name" class="col-xs-3">
+            <strong>Product to Repair</strong>
+            <p t-field="o.product_id.name"/>
+        </div>
+      </xpath>
+
+
+
       <xpath expr="//div[@t-if='o.guarantee_limit']" position="after">
         <div t-if="o.analytic_account_id" class="col-xs-3">
-          <strong>Analytic Account:</strong>
-          <p t-field="o.analytic_account_id"/>
+          <strong>Project</strong>
+          <p t-field="o.analytic_account_id.name"/>
         </div>
       </xpath>
 
