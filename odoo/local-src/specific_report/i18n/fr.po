@@ -475,7 +475,7 @@ msgstr "<strong>Prix</strong>"
 
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-msgid "<span>Delivery mote</span>"
+msgid "<span>Delivery note</span>"
 msgstr "<span>Bulletin de livraison</span>"
 
 #. module: specific_report

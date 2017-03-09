@@ -476,3 +476,8 @@ msgstr "Reparaturbestätigung / Einsatzbestätigung"
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Repair / Intervention"
 msgstr "Reparatur / Einsatz"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "Quantity"
+msgstr "Menge"
