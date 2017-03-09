@@ -26,6 +26,7 @@
  'category': 'Reports',
  'depends': ['stock',
              'product',
+             'sale_stock',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/stock.xml',
