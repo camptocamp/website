@@ -26,6 +26,7 @@
  'category': 'Reports',
  'depends': ['base',
              'sale',
+             'purchase',
              'purchase_discount',
              'delivery',
              'mrp_repair',

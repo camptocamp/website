@@ -247,9 +247,13 @@ msgstr "Adresse de facturation et de livraison"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Location"
+msgstr "Lieu"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "Place"
 msgstr "Lieu"
 
 #. module: purchase
@@ -268,14 +272,9 @@ msgstr "<strong>Date Souh.</strong>"
 msgid "Name(s)"
 msgstr "Nom(s)"
 
-#. module: purchase
-#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
-msgid "<strong>Net Price</strong>"
-msgstr "<strong>Prix</strong>"
-
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Purchase Order Confirmation"
+msgid "Purchase Order"
 msgstr "Commande"
 
 #. module: specific_report
@@ -355,8 +354,8 @@ msgstr "Merci de retourner ce document daté et signé par poste ou par e-mail e
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
-msgstr "Merci de retourner ce document daté et signé par poste ou par e-mail en PDF à orders@smartliberty.ch"
+msgid "Please send the order confirmation as PDF by e-mail to logistics@smartliberty.ch"
+msgstr "Merci d'envoyer la confirmation de commande par e-mail en PDF à logistics@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -376,11 +375,6 @@ msgstr "Prix"
 #: model:ir.model.fields,field_description:specific_report.field_sale_order_line_product_code_description
 msgid "Product code and description"
 msgstr "Product code and description"
-
-#. module: specific_report
-#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Purchase Order Confirmation"
-msgstr "Purchase Order Confirmation"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_purchase_order_line
@@ -455,6 +449,30 @@ msgid "With his signature, the customer confirms that all products listed in thi
 msgstr "Par sa signature, le client confirme avoir reçu tous les produits listés dans ce document. Merci d'informer immédiatement logistics@smartliberty.ch en cas de problèmes."
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Order Date</strong>"
+msgstr "<strong>Date de commande</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Our Order Reference</strong>"
+msgstr "<strong>Notre référence</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Shipping address</strong>"
+msgstr "<strong>Adresse de livraison</strong>"
+
+#. module: purchase_discount
+#: model:ir.ui.view,arch_db:purchase_discount.report_purchaseorder_document
+msgid "<strong>Disc. (%)</strong>"
+msgstr "<strong>Rabais (%)</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Net Price</strong>"
+msgstr "<strong>Prix</strong>"
+
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<span>Delivery mote</span>"

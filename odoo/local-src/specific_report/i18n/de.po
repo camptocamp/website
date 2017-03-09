@@ -134,7 +134,7 @@ msgstr "<strong>Total ohne steuern</strong>"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Purchase Order Confirmation"
+msgid "Purchase Order"
 msgstr "Bestellung"
 
 #. module: specific_report
@@ -274,7 +274,6 @@ msgstr "Rechnungs- und Lieferadresse"
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 #: model:ir.ui.view,arch_db:specific_report.report_picking
-#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 msgid "Location"
 msgstr "Ort"
@@ -305,6 +304,7 @@ msgstr "Partner"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
 msgid "Place"
 msgstr "Ort"
 
@@ -315,8 +315,8 @@ msgstr "Bitte dieses Dokument per Post oder per E-mail als PDF an orders@smartli
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Please return with date and signature my mail, or scan to PDF and email to orders@smartliberty.ch"
-msgstr "Bitte dieses Dokument per Post oder per E-mail als PDF an orders@smartliberty.ch zurücksenden"
+msgid "Please send the order confirmation as PDF by e-mail to logistics@smartliberty.ch"
+msgstr "Bitte senden Sie die Bestellbestätigung per E-mail als PDF an logistics@smartliberty.ch"
 
 #. module: specific_report
 #: model:ir.ui.view,arch_db:specific_report.report_invoice_document
@@ -326,11 +326,6 @@ msgstr "Bitte dieses Dokument per Post oder per E-mail als PDF an orders@smartli
 #: model:ir.ui.view,arch_db:specific_report.report_sale_layouted
 msgid "Pos"
 msgstr "Pos"
-
-#. module: purchase
-#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
-msgid "<strong>Net Price</strong>"
-msgstr "<strong>Preis</strong>"
 
 
 #. module: specific_report
@@ -342,11 +337,6 @@ msgstr "Preis"
 #: model:ir.model.fields,field_description:specific_report.field_sale_order_line_product_code_description
 msgid "Product code and description"
 msgstr "Product code and description"
-
-#. module: specific_report
-#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
-msgid "Purchase Order Confirmation"
-msgstr "Purchase Order Confirmation"
 
 #. module: specific_report
 #: model:ir.model,name:specific_report.model_purchase_order_line
@@ -438,6 +428,35 @@ msgid "<strong>Operation Line(s)</strong>"
 msgstr "<strong>Bedienzeile</strong>"
 
 #. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Order Date</strong>"
+msgstr "<strong>Bestelldatum</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Our Order Reference</strong>"
+msgstr "<strong>Unsere Bestellreferenz</strong>"
+
+#. module: specific_report
+#: model:ir.ui.view,arch_db:specific_report.report_purchaseorder_document
+msgid "<strong>Shipping address</strong>"
+msgstr "<strong>Lieferanschrift</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Stückpreis</strong>"
+
+#. module: purchase_discount
+#: model:ir.ui.view,arch_db:purchase_discount.report_purchaseorder_document
+msgid "<strong>Disc. (%)</strong>"
+msgstr "<strong>Rabatt (%)</strong>"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+msgid "<strong>Net Price</strong>"
+msgstr "<strong>Preis</strong>"
+
 #: model:ir.ui.view,arch_db:specific_report.report_delivery_document
 #: model:ir.ui.view,arch_db:specific_report.report_picking
 msgid "<span>Delivery note</span>"
@@ -457,5 +476,3 @@ msgstr "Reparaturbestätigung / Einsatzbestätigung"
 #: model:ir.ui.view,arch_db:specific_report.report_mrprepairorder
 msgid "Repair / Intervention"
 msgstr "Reparatur / Einsatz"
-
-
