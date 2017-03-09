@@ -16,6 +16,16 @@
 Release History
 ---------------
 
+10.3.3 (2017-03-09)
++++++++++++++++++++
+
+**Bugfixes**
+* Fix in invoice, sale, po, out reports
+* Add lang in partner contact form
+* remove warning on sale order
+* Correct multiple picking for manual delivery
+* Fix website languages
+* correct "delivered quantity" on OUT report
 
 10.3.2 (2017-03-02)
 +++++++++++++++++++
