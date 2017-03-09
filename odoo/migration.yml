@@ -264,3 +264,4 @@ migration:
         upgrade:
             - sale_manual_delivery
             - specific_report
+            - specific_fct
