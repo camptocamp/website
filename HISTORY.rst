@@ -16,6 +16,12 @@
 Release History
 ---------------
 
+latest (unreleased)
++++++++++++++++++++
+
+10.3.4 (2017-03-22)
++++++++++++++++++++
+
 **Bugfixes**
 * Fix description in invoice report
 
