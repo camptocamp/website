@@ -265,3 +265,7 @@ migration:
             - sale_manual_delivery
             - specific_report
             - specific_fct
+    - version: 10.3.4
+      addons:
+        upgrade:
+            - specific_report

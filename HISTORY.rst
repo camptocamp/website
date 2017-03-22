@@ -16,6 +16,9 @@
 Release History
 ---------------
 
+**Bugfixes**
+* Fix description in invoice report
+
 10.3.3 (2017-03-09)
 +++++++++++++++++++
 
