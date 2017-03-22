@@ -15,7 +15,8 @@ class InvoiceLine(models.Model):
         if not self.product_id:
             return {'domain': {'product_uom': []}}
         result = super(InvoiceLine, self).product_id_change()
-        name = self.product_id.name_get()[0][1]
+        name = self.product_id.with_context(
+            lang=self.invoice_id.partner_id.lang).name_get()[0][1]
         if name:
             name = name.replace(u'] ', u']\n', 1)
             if self.product_id.description_sale:
