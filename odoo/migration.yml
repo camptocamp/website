@@ -269,3 +269,6 @@ migration:
       addons:
         upgrade:
             - specific_report
+    - version: 10.3.5
+        upgrade:
+            - sale_manual_delivery

@@ -20,6 +20,18 @@ latest (unreleased)
 +++++++++++++++++++
 
 **Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.3.5 (2017-04-13)
++++++++++++++++++++
+
+**Features and Improvements**
 * Add product name to manual delivery lines
 
 10.3.4 (2017-03-22)
