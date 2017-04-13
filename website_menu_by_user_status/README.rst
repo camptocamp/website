@@ -7,7 +7,10 @@ The selection of the display status can be chosen logged and/or not.
 Extends features and view of website.menu model.
 
 Website.menu list view can be found at:
-Settings > Configuration > Website Settings > Configure Website menus
+
+Website Admin > Configuration > Settings > Configure website menus
+-> you must activate the developer mode
+-> remove default filter to edit website menu line
 
 The module inherit from website.menu to add 2 booleans fields, user_logged
 and user_not_logged.
@@ -24,6 +27,6 @@ Contributors
 
 More information
 ----------------
-Module developed and tested with Odoo version 8.0
+Module developed and tested with Odoo version 10.0
 For questions, please contact our support services
 <support@savoirfairelinux.com>
