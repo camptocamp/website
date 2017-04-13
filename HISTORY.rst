@@ -19,6 +19,9 @@ Release History
 latest (unreleased)
 +++++++++++++++++++
 
+**Features and Improvements**
+* Add product name to manual delivery lines
+
 10.3.4 (2017-03-22)
 +++++++++++++++++++
 
