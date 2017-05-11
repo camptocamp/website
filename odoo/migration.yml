@@ -273,3 +273,7 @@ migration:
       addons:
         upgrade:
             - sale_manual_delivery
+    - version: 10.3.6
+      addons:
+        upgrade:
+            - sale_manual_delivery

@@ -28,6 +28,13 @@ latest (unreleased)
 **Documentation**
 
 
+10.3.6 (2017-05-11)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add SO line description to manual delivery lines
+
 10.3.5 (2017-04-13)
 +++++++++++++++++++
 
