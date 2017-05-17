@@ -34,6 +34,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add SO line description to manual delivery lines
+* Print stock operations instead of stock moves in delivery slip
 
 10.3.5 (2017-04-13)
 +++++++++++++++++++
