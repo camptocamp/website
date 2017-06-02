@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:10.0-2.0.0
+FROM camptocamp/odoo-project:10.0-2.2.0
 MAINTAINER Camptocamp
 
 # Install additional debian packages if needed
@@ -9,11 +9,14 @@ MAINTAINER Camptocamp
 #         && apt-get clean \
 #         && rm -rf /var/lib/apt/lists/*
 
+COPY ./before-migrate-entrypoint.d/* odoo/before-migrate-entrypoint.d/
+COPY ./start-entrypoint.d/* odoo/start-entrypoint.d/
+RUN chmod +x odoo/before-migrate-entrypoint.d/* \
+    && chmod +x odoo/start-entrypoint.d/*
+
 # Install additional python packages if needed
 COPY ./requirements.txt /opt/odoo
 RUN cd /opt/odoo && pip install -r requirements.txt
-
-COPY ./start-entrypoint.d/010_dev_set_db_storage /opt/odoo/start-entrypoint.d/010_dev_set_db_storage
 
 ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/src/addons, \
