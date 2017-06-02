@@ -17,8 +17,11 @@ env:
     - ADDONS_DIR=${TRAVIS_BUILD_DIR}/odoo/local-src
     - SONGS_DIR=${TRAVIS_BUILD_DIR}/odoo/songs
     - COMPOSE_PROJECT_NAME=smartliberty
-    - RANCHER_STACK_NAME=smartliberty-odoo-test
-    - secure: "XeuISuPxR2XKndkVTqb5c3BeFKkeMyaGTYXr8aBgiKDm1GGpjeP3ynmNEpJZ25Xou1bl8iBXPIhoE6WSTe0ph8FgY0OFhIRm6N9X/0dSONj4YG6WyLMqlhLllLkG6ZNzFDcNvl6G509twAOu1iSj53v2NlbBovC3z8dLQH8tg03pKrfqutMrnFwaL9akRvJ7tcKgSIi2G8ZUdis1q5w0DT0JPYaqzd0slox3lPM4j2Cc6lsvcWRezl/btEuIP1DdWGC4pFN8Ceu2xb3Qf6+85YxB4w7aBUaU7tqnj9sMnmRbY14lFNoO7P4xkueZPDoXN1bbJdajq63h2z/GVd/+zscDLRwLXZHp9Bm/yrFWo8jEZOJwIi+Q7r4NRC8o80r2xEwwC9rJg01NQS+nC5bz6YbUH2SZR+mKdC9YwRkk/ZcAYqa8RPNKXKg63n3NV1H2VrsPnfpgoeBNA72X6Boa29P0t699Zb7tSiIay2I6RXEzDtZ9LLNB/FEyUqm0B76Zz9qh33gbyOqzj3HRIfX2LrQhsyZ4Bve0Jq//6ZyKWnwiZVh436oQ+3Fqc5u683bc5kqEUPnAYhNVC/71Zs/UVUx0zCjYHVQ4IW228BIceyaNWnUQMO5PE8Zn/SlFNSaVUg7fo9EZwztyxFYttBYhD1PK7lszo888N3amoSl8nfs="
+    - GENERATED_IMAGE=${COMPOSE_PROJECT_NAME}_odoo
+    - DOCKER_HUB_REPO=camptocamp/${GENERATED_IMAGE}
+    - RANCHER_MINION_SERVER=https://${COMPOSE_PROJECT_NAME}.odoo-test.camptocamp.ch
+      # rancher minion token
+    - secure: "fIkwxibFyQZ+5txMxfYuda//VoqOZykbGv8YzHDS8qMYVlA/Hbe4g0357N0mL/fBXvrHR7IMDM0le7KqZ9lc0RYqKhSmjtpwv5MVQuN8vvSI0qjOjK55YYFlL0UA1DBLQkYt5w8Gx8P8ogK3xol696mnYVc4CWBR6DjKxpksjMjwcPfw+oSh/67/Vt7PV/9sBnxaG3Z92nbu+jxiOzAwZWai8MqFzZ+nfLKEV3Rktrt5CFL4ACltYEeMqcuw9Kp8SJ9bS1in8VrAmBcGmiNMgzH3T/3wiTZjUI4hFmoIKRc+Da21GFSqsf3PTTJqkjlJV0J8uSv0DXNFf9AYsx3k7YXyuPNq//a95DWY10ZNyoKJ0rd60fIWXTi8Ef+PN2+qazWTRZntNiSii2Fm6TxMLBqlBM7FPtQaW6UkW2QhlO/LJKh3e1pTRrvfO+VeklGmj5nhF/bb9ey1KO9QGadTGWYYmF9NUTIvS/hYmaw/syX4gdwh78KAwTSo3PPB5PjpCQEqfJIk0miBJfDayobWap0mXJ8ydhRE1ZymyWcp9MbH39ggi+jJrOrFGUiOD0TGWWfClcL/l5H1Wxpdx/KTPG6hL5De/gSGWC83JxkWTD6SCjpbODgM7RfNOUzfI8t0izWIA4nJVgTuhXn6XN6hflPnLlSHCb4Yw5o7jE56Wbk="
 
 before_install:
   - sudo apt-get update
@@ -30,10 +33,10 @@ before_install:
   - git config --global user.name "TravisCI"
   - git config --global user.email "travis@camptocamp.com"
   - if [ "$LINT_CHECK" == "1" ] ; then pip install --user -q flake8 ; fi
-  - if [ "$LINT_CHECK" == "0" ] ; then pip install --user -q gitpython ; fi
+  - if [ "$LINT_CHECK" == "0" ] ; then pip install --user -q gitpython requests pyyaml; fi
 
 install:
-  - if [ "$LINT_CHECK" == "0" ] ; then python ./travis/git_submodule_update.py ; fi
+  - if [ "$LINT_CHECK" == "0" ] ; then ./travis/git_submodule_update.py ; fi
     # we always specify '-f docker-compose.yml' so 'docker-compose.override.yml'
     # is not used and so the volumes are not shared with the host
   - if [ "$LINT_CHECK" == "0" ] ; then docker-compose -f docker-compose.yml build --pull ; fi
