@@ -2,7 +2,7 @@ version: '2'
 services:
 
   odoo:
-    image: camptocamp/{{cookiecutter.project_name}}:${DOCKER_TAG}
+    image: camptocamp/smartliberty_odoo:${DOCKER_TAG}
     command: "odoo --load=web,web_kanban,attachment_s3,session_redis,logging_json"
     links:
       - db:db
