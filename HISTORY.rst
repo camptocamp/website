@@ -27,7 +27,7 @@ latest (unreleased)
 
 **Documentation**
 
-10.3.7 (2017-05-11)
+10.3.7 (2017-06-12)
 +++++++++++++++++++
 
 **Features and Improvements**
