@@ -27,6 +27,12 @@ latest (unreleased)
 
 **Documentation**
 
+10.3.7 (2017-05-11)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Remove registration from event web page
 
 10.3.6 (2017-05-11)
 +++++++++++++++++++
