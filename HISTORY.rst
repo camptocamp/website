@@ -27,6 +27,13 @@ latest (unreleased)
 
 **Documentation**
 
+10.3.8 (2017-06-15)
+++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add the custom sale_order_merge addon.(odoo incident 4075)
+
 10.3.7 (2017-06-12)
 +++++++++++++++++++
 

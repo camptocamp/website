@@ -282,3 +282,8 @@ migration:
       addons:
         upgrade:
             - specific_fct
+
+    - version: 10.3.8
+      addons:
+        upgrade:
+            - draft_sale_order_merge
