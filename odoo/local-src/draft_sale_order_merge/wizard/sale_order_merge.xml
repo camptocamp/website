@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="draft_sale_order_merger_view_form" model="ir.ui.view">
+      <field name="name">draft sale order merge view form</field>
+      <field name="model">draft_sale_order_merger</field>
+      <field name="arch" type="xml">
+        <form string="Merge Sale order">
+          <div>
+This wizard allows you to merge draft sales orders.<br/>
+<br/>
+The candidate sales order are available below.<br/>
+You can remove the sales orders you are not interested to merge.<br/>
+Proposed sales order must meet the following criterion:<br/>
+- Sales order is in a draft state <br/>
+- Sales order have the same customer and addresses as target sales orders <br/>
+- Sales order is from the same company <br/>
+- Sales order is not related to any invoices or picking
+          </div>
+          <group col="4">
+            <field name="target_so"/>
+            <field name="target_state"/>
+          </group>
+          <group col="4">
+            <field colspan="4"
+                   name="merge_candidates"
+                   options="{'no_create_edit': True}"/>
+          </group>
+          <footer>
+            <button string="Merge Sales Order" name="merge_sale_orders"
+                    type="object" class="btn-primary"
+                    attrs="{'invisible': [('target_state', '!=', 'draft')]}" />
+            <button string="Cancel" class="btn-default" special="cancel"/>
+          </footer>
+
+        </form>
+      </field>
+    </record>
+
+    <record id="action_draft_sale_order_merger_view_open" model="ir.actions.act_window">
+      <field name="name">Merge sales orders</field>
+      <field name="res_model">draft_sale_order_merger</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="draft_sale_order_merger_view_form"/>
+      <field name="target">new</field>
+    </record>
+
+
+    <record model="ir.values" id="action_draft_sale_order_merger_view_menu">
+      <field name="model_id" ref="sale.model_sale_order"/>
+      <field name="name">Merge sale orders</field>
+      <field name="key2">client_action_multi</field>
+      <field name="value" eval="'ir.actions.act_window,' + str(ref('action_draft_sale_order_merger_view_open'))" />
+
+      <field name="key">action</field>
+      <field name="model">sale.order</field>
+    </record>
+
+  </data>
+</odoo>
