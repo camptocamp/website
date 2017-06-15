@@ -67,7 +67,8 @@ class SaleOrder(models.Model):
         """
         if any([self.invoice_ids, self.picking_ids]):
             raise UserError(
-                _('Sales order %s is related to invoice or delivery') % self.name
+                _('Sales order %s is related to invoice or delivery') %
+                self.name
             )
         if self.state != 'draft':
             raise UserError(

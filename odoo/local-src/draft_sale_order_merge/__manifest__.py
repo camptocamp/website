@@ -28,8 +28,10 @@ When merging, data will be taken from original sales order
 - etc.
 
 The SO lines will not be merged.
-The action is not destructive the merged on merged SO. They are deactivated and renamed.
-Target SO will have his lines altered directly in order to preserve numeration and references.
+The action is not destructive the merged on merged SO.
+They are deactivated and renamed.
+Target SO will have his lines altered directly in order
+to preserve numeration and references.
 """,
  'website': 'http://www.camptocamp.com',
  'data': ['wizard/sale_order_merge.xml',

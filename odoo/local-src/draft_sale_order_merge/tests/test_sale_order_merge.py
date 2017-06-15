@@ -66,8 +66,10 @@ class TestSalesOrderMerge(TransactionCase):
 
         self.non_candidate_so = self.env['sale.order'].create({
             'partner_id': self.env.ref('base.res_partner_address_5').id,
-            'partner_invoice_id': self.env.ref('base.res_partner_address_5').id,
-            'partner_shipping_id': self.env.ref('base.res_partner_address_5').id,
+            'partner_invoice_id': self.env.ref(
+                'base.res_partner_address_5').id,
+            'partner_shipping_id': self.env.ref(
+                'base.res_partner_address_5').id,
             'order_line': self.make_so_lines(),
             'pricelist_id': self.env.ref('product.list0').id,
         })
