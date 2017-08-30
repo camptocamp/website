@@ -29,6 +29,7 @@ latest (unreleased)
 **Build**
 
 * Update odoo-template to 10.0-2.3.0
+* Remove old pending-merge
 
 **Documentation**
 
