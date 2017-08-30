@@ -286,3 +286,10 @@ migration:
       addons:
         upgrade:
             - draft_sale_order_merge
+    - version: 10.5.0
+      addons:
+        upgrade:
+            - base_dj
+            - base_settings_exporter
+            - web_environment_ribbon
+            - server_environment_ir_config_parameter

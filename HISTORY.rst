@@ -21,9 +21,15 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Install ribbon
+* Add dj_tool
+
 **Bugfixes**
 
 **Build**
+
+* Update odoo-template to 10.0-2.3.0
+* Remove old pending-merge
 
 **Documentation**
 

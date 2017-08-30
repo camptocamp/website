@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:10.0-2.2.0
+FROM camptocamp/odoo-project:10.0-2.3.0
 MAINTAINER Camptocamp
 
 # Install additional debian packages if needed
@@ -38,6 +38,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/server-tools, \
   /opt/odoo/external-src/survey, \
   /opt/odoo/external-src/web, \
+  /opt/odoo/external-src/odoo-prototype, \
   /opt/odoo/local-src" \
   LIMIT_TIME_CPU=86400 \
   LIMIT_TIME_REAL=86400 \

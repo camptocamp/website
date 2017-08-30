@@ -4,5 +4,5 @@ Do not modify. Any manual change will be lost.
 Please propose your modification on
 https://github.com/camptocamp/odoo-template instead.
 -->
-Platform documentation is on
-https://confluence.camptocamp.com/confluence/display/BS/Odoo+Cloud+Platform+-+Technical
+Test Platform documentation is on
+https://confluence.camptocamp.com/confluence/display/BS/Odoo+Test+Platform+-+Minions+-+Technical
