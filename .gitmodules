@@ -51,11 +51,15 @@
 	url = git@github.com:camptocamp/odoo
 [submodule "odoo/external-src/server-tools"]
 	path = odoo/external-src/server-tools
-	url = git@github.com:camptocamp/server-tools
+	url = git@github.com:OCA/server-tools
 [submodule "odoo/external-src/odoo-cloud-platform"]
 	path = odoo/external-src/odoo-cloud-platform
 	url = git@github.com:camptocamp/odoo-cloud-platform
 [submodule "odoo/external-src/bank-payment"]
 	path = odoo/external-src/bank-payment
 	url = git@github.com:OCA/bank-payment.git
+	branch = 10.0
+[submodule "odoo/external-src/odoo-prototype"]
+	path = odoo/external-src/odoo-prototype
+	url = git@github.com:camptocamp/odoo-prototype.git
 	branch = 10.0
