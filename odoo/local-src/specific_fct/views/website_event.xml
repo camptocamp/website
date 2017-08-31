@@ -1,4 +1,7 @@
 
 <odoo>
-    <template id="website_event.registration_template"/>
+    <!-- Registration template has been removed in order to `remove registrations from event web page`.
+    Installing `website_sale` makes `website_event_sale` to auto-install and it tries to
+    update with xpath a removed template. We are now targeting the newest template to remove them all-->
+    <template id="registration_template" inherit_id="website_event_sale.registration_template"/>
 </odoo>

@@ -49,3 +49,12 @@
     # Update account_financial_html_report_data.xml
     - odoo refs/pull/817/head
   target: *default_target
+./external-src/website:
+  remotes:
+    oca: git@github.com:OCA/website.git
+    camptocamp: git@github.com:camptocamp/website.git
+  merges:
+    - oca 10.0
+    # website_menu_by_user_status
+    - oca refs/pull/324/head
+  target: *default_target

@@ -38,6 +38,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/server-tools, \
   /opt/odoo/external-src/survey, \
   /opt/odoo/external-src/web, \
+  /opt/odoo/external-src/website, \
   /opt/odoo/external-src/odoo-prototype, \
   /opt/odoo/local-src" \
   LIMIT_TIME_CPU=86400 \

@@ -293,3 +293,8 @@ migration:
             - base_settings_exporter
             - web_environment_ribbon
             - server_environment_ir_config_parameter
+            - website_event
+            - specific_fct
+            - website_sale
+            - website_menu_by_user_status
+            - smartliberty_website_sale
