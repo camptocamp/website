@@ -63,3 +63,6 @@
 	path = odoo/external-src/odoo-prototype
 	url = git@github.com:camptocamp/odoo-prototype.git
 	branch = 10.0
+[submodule "odoo/external-src/website"]
+	path = odoo/external-src/website
+	url = https://github.com/camptocamp/website.git

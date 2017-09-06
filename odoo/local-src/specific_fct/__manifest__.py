@@ -28,7 +28,7 @@
              'product',
              'sale_stock',
              'base',
-             'website_event'
+             'website_event_sale',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/stock.xml',
