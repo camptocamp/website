@@ -21,8 +21,21 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.5.0 (2017-09-06)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Install ribbon
 * Add dj_tool
+* Install e-shop (website_sale) & hide menuitems for non-authenticated users
 
 **Bugfixes**
 
