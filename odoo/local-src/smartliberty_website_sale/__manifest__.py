@@ -9,7 +9,6 @@
  'license': 'AGPL-3',
  'depends': [
      'website_sale',
-     'website_menu_by_user_status',
  ],
  'website': 'www.camptocamp.com',
  'data': [
