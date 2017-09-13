@@ -298,3 +298,7 @@ migration:
             - website_sale
             - website_menu_by_user_status
             - smartliberty_website_sale
+    - version: 10.5.1
+      addons:
+        upgrade:
+            - smartliberty_website_sale

@@ -28,6 +28,20 @@ latest (unreleased)
 **Documentation**
 
 
+10.5.1 (2017-09-13)
++++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+* fixes 404 on contact form https://jira.camptocamp.com/browse/BIZ-492
+
+**Build**
+
+**Documentation**
+
+
 10.5.0 (2017-09-06)
 +++++++++++++++++++
 
