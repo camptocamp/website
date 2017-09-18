@@ -23,6 +23,9 @@ latest (unreleased)
 
 **Bugfixes**
 
+* [fix] empty space before blogpost title BCS-10
+
+
 **Build**
 
 **Documentation**
