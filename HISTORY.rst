@@ -34,6 +34,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Install web_m2x_options and configured to remove quick create
+* Install expense_is_in_group
 
 **Bugfixes**
 

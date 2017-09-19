@@ -308,4 +308,5 @@ migration:
           - anthem songs.updates.update_10_6_0.update::main
       addons:
         upgrade:
-            - web_m2x_options
+          - web_m2x_options
+          - expense_is_in_group
