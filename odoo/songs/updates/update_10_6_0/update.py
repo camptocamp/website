@@ -8,7 +8,7 @@ import anthem
 
 @anthem.log
 def set_web_m2x_options_settings(ctx):
-    """ add settings """
+    """ Add settings """
     ir_config_parameter = ctx.env['ir.config_parameter']
     # Remove quick create from all model
     ir_config_parameter.create({'key': 'web_m2x_options.create',
