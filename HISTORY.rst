@@ -28,6 +28,20 @@ latest (unreleased)
 **Documentation**
 
 
+10.6.0 (2017-09-14)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Install web_m2x_options and configured to remove quick create
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
 10.5.1 (2017-09-13)
 +++++++++++++++++++
 

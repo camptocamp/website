@@ -302,3 +302,10 @@ migration:
       addons:
         upgrade:
             - smartliberty_website_sale
+    - version: 10.6.0
+      operations:
+        post:
+          - anthem songs.updates.update_10_6_0.update::main
+      addons:
+        upgrade:
+            - web_m2x_options
