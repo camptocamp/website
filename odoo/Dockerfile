@@ -26,6 +26,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/bank-payment, \
   /opt/odoo/external-src/bank-statement-reconcile, \
   /opt/odoo/external-src/event, \
+  /opt/odoo/external-src/hr, \
   /opt/odoo/external-src/hr-timesheet, \
   /opt/odoo/external-src/knowledge, \
   /opt/odoo/external-src/l10n-switzerland, \
@@ -40,6 +41,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/web, \
   /opt/odoo/external-src/website, \
   /opt/odoo/external-src/odoo-prototype, \
+  /opt/odoo/external-src/odoo-usability, \
   /opt/odoo/local-src" \
   LIMIT_TIME_CPU=86400 \
   LIMIT_TIME_REAL=86400 \
