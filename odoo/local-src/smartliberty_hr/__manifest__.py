@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Expanse with readonly fields',
+    'name': 'SMARTLIBERTY HR Customization',
     'version': '10.0.0.0.0',
     'category': 'Human Resources',
     'author': 'Camptocamp',
