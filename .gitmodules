@@ -66,3 +66,11 @@
 [submodule "odoo/external-src/website"]
 	path = odoo/external-src/website
 	url = https://github.com/camptocamp/website.git
+[submodule "odoo/external-src/hr"]
+	path = odoo/external-src/hr
+	url = git@github.com:OCA/hr.git
+	branch = 10.0
+[submodule "odoo/external-src/odoo-usability"]
+	path = odoo/external-src/odoo-usability
+	url = git@github.com:camptocamp/odoo-usability.git
+	branch = 10.0

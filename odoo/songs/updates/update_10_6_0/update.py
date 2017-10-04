@@ -11,8 +11,14 @@ def set_web_m2x_options_settings(ctx):
     """ Add settings """
     ir_config_parameter = ctx.env['ir.config_parameter']
     # Remove quick create from all model
-    ir_config_parameter.create({'key': 'web_m2x_options.create',
-                                'value': 'False'})
+    web_m2x_options_create = ir_config_parameter.search(
+        [('key', '=', 'web_m2x_options.create')]
+    )
+    if web_m2x_options_create:
+        ir_config_parameter.write({'value': 'False'})
+    else:
+        ir_config_parameter.create({'key': 'web_m2x_options.create',
+                                    'value': 'False'})
 
 
 @anthem.log
