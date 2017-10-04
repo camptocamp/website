@@ -53,8 +53,17 @@ odoo.define('theme_graphene.frontend', function (require) {
                     if (graph_header_affix) {$graph_header_clone.css("top", edit_bar_h)}
                 }
                 if (graph_top_content) {
-                    var s = $wrap.find(".move_to_top, #title.blog_header > .cover.cover_full");
-                    $wrap.css("margin-top", (s.height()* 0.8));
+                    /* Prevent empty space above header BCS-10.
+                    The original code here
+
+                      var s = $wrap.find(".move_to_top, #title.blog_header > .cover.cover_full");
+                      $wrap.css("margin-top", (s.height()* 0.8));
+
+                    was setting a huge margin-top on #wrap element.
+                    Below we set only the proper margin-top calculated on
+                    the header height (that actually matches the top header menu height). */
+                    var s = $wrapwrap.find("header");
+                    $wrap.css("margin-top", s.height());
                 };
                 $win.trigger("scroll");
             })
