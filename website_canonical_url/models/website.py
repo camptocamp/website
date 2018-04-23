@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Simone Orsi <simone.orsi@camptocamp.com>
 # Copyright initOS GmbH 2016
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models, api, fields, exceptions, _
 from odoo.http import request
-from urlparse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin
 
 
 class Website(models.Model):
@@ -57,13 +56,10 @@ class Website(models.Model):
         return canonical_url
 
     def _is_root_page(self, url, lang_path=''):
-        # TODO v11: `/page` does not exist anymore
-        first_part = '/page/'
         if lang_path:
             # usually URLs in menu item do not contain lang
             url = url.replace(lang_path, '/')
         return (
-            url.startswith(first_part) and
             self.menu_id.child_id and
             self.menu_id.child_id[0].url == url
         )
