@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Simone Orsi <simone.orsi@camptocamp.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -22,12 +21,12 @@ class UICase(HttpCase):
         self._reload_page()
         self.website = self.env['website'].browse(1)
         self.domain = self.website._get_canonical_domain()
-        self.path = "/page/website_canonical_url.canonical_demo"
+        self.path = "/canonical-demo"
         self.url_absolute = self.domain + self.path
         self.qstring = "?ultimate_answer=42"
         self.url_full = "%s%s" % (self.url_absolute, self.qstring)
         self.url_data = self.url_open(self.url_full)
-        self.doc = document_fromstring(self.url_data.read())
+        self.doc = document_fromstring(self.url_data.content)
 
     def _reload_page(self):
         # if you run tests more than once (locally for instance)
