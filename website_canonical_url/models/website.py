@@ -1,35 +1,64 @@
 # -*- coding: utf-8 -*-
+# Copyright 2018 Simone Orsi <simone.orsi@camptocamp.com>
 # Copyright initOS GmbH 2016
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, api
+from odoo import models, api, fields
 from odoo.http import request
-from urlparse import urlparse, urlunparse
+from urlparse import urlparse, urlunparse, urljoin
 
 
 class Website(models.Model):
     _inherit = 'website'
 
+    canonical_domain = fields.Char()
+
     @api.multi
     def get_canonical_url(self, req=None):
-        canonical_url = None
-        if req is None:  # pragma: no cover
-            req = request
-        if req and req.httprequest.path:
-            lang = self.env.lang
-            if lang == request.website.default_lang_code:
-                canonical_url = req.httprequest.path
-            else:
-                url_parts = urlparse(req.httprequest.path)
-                url_parts = list(url_parts)
-                # change the path of the url
-                url_parts[2] = lang + url_parts[2]
-                canonical_url = urlunparse(url_parts)
+        return urljoin(
+            self._get_canonical_domain(),
+            self._get_canonical_relative_url(req=req)
+        )
+
+    @api.multi
+    def _get_canonical_domain(self):
+        self.ensure_one()
+        if self.canonical_domain:
+            return self.canonical_domain
+        params = self.env['ir.config_parameter'].sudo()
+        return params.get_param('web.base.url')
+
+    @api.multi
+    def _get_canonical_relative_url(self, req=None):
+        req = req or request
+        parsed = urlparse(req.httprequest.path)
+        canonical_url = parsed.path
+        lang = (
+            getattr(req, 'lang', None) or
+            self.env.lang or
+            req.website.default_lang_code
+        )
+        lang_path = ''
+        if lang != req.website.default_lang_code:
+            # eg: language is `it_IT` but main lang is `en_US`
+            lang_path = '/%s/' % lang
+        if lang_path and not canonical_url.startswith(lang_path):
+            # not main lang: make sure lang is in path
+            canonical_url = lang_path + canonical_url.lstrip('/')
         # Special case for rerouted requests to root path
-        try:
-            if (canonical_url.startswith("/page/") and
-                    self.menu_id.child_id[0].url == canonical_url):
-                canonical_url = "/"
-        except:  # pragma: no cover
-            pass
+        if self._is_root_page(canonical_url, lang_path=lang_path):
+            # redirect to root if main lang otherwise to language root
+            canonical_url = '/' if not lang_path else lang_path.rstrip('/')
         return canonical_url
+
+    def _is_root_page(self, url, lang_path=''):
+        # TODO v11: `/page` does not exist anymore
+        first_part = '/page/'
+        if lang_path:
+            # usually URLs in menu item do not contain lang
+            url = url.replace(lang_path, '/')
+        return (
+            url.startswith(first_part) and
+            self.menu_id.child_id and
+            self.menu_id.child_id[0].url == url
+        )
