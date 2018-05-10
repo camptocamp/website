@@ -83,7 +83,7 @@ class URLCase(SavepointCase):
         self.website.default_lang_id = self.env.ref('base.lang_it')
         self.assertEqual(
             self.website._get_canonical_relative_url(req=req),
-            '/en_US'
+            '/en_US/'
         )
 
     def test_canonical_url(self):
@@ -99,7 +99,7 @@ class URLCase(SavepointCase):
         req = FakeRequest(self.website, '/en_US/my/lovely/page?foo=baz')
         self.website.default_lang_id = self.env.ref('base.lang_it')
         self.assertEqual(
-            self.website.with_context(lang='en_US').get_canonical_url(req=req),
+            self.website.get_canonical_url(req=req),
             'https://oh.yeah/en_US/my/lovely/page'
         )
 
@@ -117,5 +117,5 @@ class URLCase(SavepointCase):
             self.website, '/it_IT/page/homepage?foo=baz', lang='it_IT')
         self.assertEqual(
             self.website.get_canonical_url(req=req),
-            'https://oh.yeah/it_IT'
+            'https://oh.yeah/it_IT/'
         )

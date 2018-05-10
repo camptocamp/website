@@ -43,23 +43,17 @@ class Website(models.Model):
     def _get_canonical_relative_url(self, req=None):
         req = req or request
         parsed = urlparse(req.httprequest.path)
+        # here we get the full path and qstring args stripped out already
         canonical_url = parsed.path
-        lang = (
-            getattr(req, 'lang', None) or
-            self.env.lang or
-            req.website.default_lang_code
-        )
+        # build lang path if request lang does not match default lang
         lang_path = ''
-        if lang != req.website.default_lang_code:
+        if req.lang != req.website.default_lang_code:
             # eg: language is `it_IT` but main lang is `en_US`
-            lang_path = '/%s/' % lang
-        if lang_path and not canonical_url.startswith(lang_path):
-            # not main lang: make sure lang is in path
-            canonical_url = lang_path + canonical_url.lstrip('/')
-        # Special case for rerouted requests to root path
+            lang_path = '/%s/' % req.lang
+        # handle special case for rerouted requests to root path
         if self._is_root_page(canonical_url, lang_path=lang_path):
-            # redirect to root if main lang otherwise to language root
-            canonical_url = '/' if not lang_path else lang_path.rstrip('/')
+            # redirect to root if main lang matches otherwise to language root
+            canonical_url = '/' if not lang_path else lang_path
         return canonical_url
 
     def _is_root_page(self, url, lang_path=''):
