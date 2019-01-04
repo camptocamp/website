@@ -11,22 +11,52 @@ odoo.define('website_form_recaptcha.recaptcha', function (require) {
 
     snippet_animation.registry.form_builder_send = form_builder_send.extend({
 
+        // https://developers.google.com/recaptcha/docs/language
+        captcha_languages: [
+            "ar", "af", "am", "hy", "az", "eu", "bn", "bg", "ca", "zh-HK",
+            "zh-CN", "zh-TW", "hr", "cs", "da", "nl", "en-GB", "en", "et",
+            "fil", "fi", "fr", "fr-CA", "gl", "ka", "de", "de-AT", "de-CH",
+            "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko",
+            "lo", "lv", "lt", "ms", "ml", "mr", "mn", "no", "fa", "pl", "pt",
+            "pt-BR", "pt-PT", "ro", "ru", "sr", "si", "sk", "sl", "es", "es-419",
+            "sw", "sv", "ta", "te", "th", "tr", "uk", "ur", "vi", "zu",
+        ],
         start: function () {
             var self = this;
             this._super();
             this.$captchas = self.$('.o_website_form_recaptcha');
-            ajax.post('/website/recaptcha/', {}).then(
+            this.handle_captcha();
+        },
+        handle_captcha: function() {
+            var self = this;
+            return ajax.post('/website/recaptcha/', {}).then(
                 function (result) {
                     var data = JSON.parse(result);
-                    self.$captchas.append($(
-                        '<div class="g-recaptcha" data-sitekey="' +
-                        data.site_key + '"></div>'
-                    ));
+                    self.$captchas.append(self._get_captcha_elem(data));
                     if (self.$captchas.length) {
-                        $.getScript('https://www.google.com/recaptcha/api.js');
+                        $.getScript(self._get_captcha_script_url(data));
                     }
                 }
             );
         },
+        _get_captcha_elem: function (data) {
+            return $('<div/>', {
+                'class': 'g-recaptcha',
+                'data-sitekey': data.site_key
+            });
+        },
+        _get_captcha_script_url: function (data) {
+            return 'https://www.google.com/recaptcha/api.js' + this._set_additional_params();
+        },
+        _set_additional_params: function() {
+            var lang = $("html").attr("lang").replace("_", "-");
+            if (this.captcha_languages.includes(lang)) {
+                return "?hl=" + lang;
+            }
+            if (this.captcha_languages.includes(lang.slice(0, 2))) {
+                return "?hl=" + lang.slice(0, 2);
+            }
+            return '';
+        }
     });
 });
