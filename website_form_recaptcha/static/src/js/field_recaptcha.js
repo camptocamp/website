@@ -15,18 +15,28 @@ odoo.define('website_form_recaptcha.recaptcha', function (require) {
             var self = this;
             this._super();
             this.$captchas = self.$('.o_website_form_recaptcha');
-            ajax.post('/website/recaptcha/', {}).then(
+            this.handle_captcha();
+        },
+        handle_captcha: function() {
+            var self = this;
+            return ajax.post('/website/recaptcha/', {}).then(
                 function (result) {
                     var data = JSON.parse(result);
-                    self.$captchas.append($(
-                        '<div class="g-recaptcha" data-sitekey="' +
-                        data.site_key + '"></div>'
-                    ));
+                    self.$captchas.append(self._get_captcha_elem(data));
                     if (self.$captchas.length) {
-                        $.getScript('https://www.google.com/recaptcha/api.js');
+                        $.getScript(self._get_captcha_script_url(data));
                     }
                 }
             );
         },
+        _get_captcha_elem: function (data) {
+            return $('<div/>', {
+                'class': 'g-recaptcha',
+                'data-sitekey': data.site_key
+            });
+        },
+        _get_captcha_script_url: function (data) {
+            return 'https://www.google.com/recaptcha/api.js';
+        }
     });
 });
