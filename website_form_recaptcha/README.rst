@@ -25,6 +25,9 @@ To use this module, you need to:
 * Set `website_form_recaptcha` to `True` on that model (similar to enabling forms)
 * Add an element with the `o_website_form_recaptcha` class anywhere in the form
 
+Captcha will try to use the language of your website, if it, for whatever
+reason, can't find it will default it google api and use a language of the
+browser.
 Look at `website_crm_recaptcha` module for example implementation
 
 
