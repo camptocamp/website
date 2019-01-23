@@ -95,6 +95,43 @@ class TestCaptcha(TransactionCase):
             self.model_obj.validate_response(
                 *self.validate_vars, website=self.website)
 
+    def test_validate_request_no_value(self):
+        request = object()
+        req_values = {}
+        with self.assertRaises(ValidationError) as err:
+            self.model_obj.validate_request(request, req_values)
+        self.assertEqual(
+            err.exception.name, 'The secret parameter is missing.')
+
+    def test_validate_request_old_value(self):
+        request = mock.MagicMock()
+        request.g_recaptcha_response = 'all good here'
+        req_values = {}
+        self.assertTrue(self.model_obj.validate_request(request, req_values))
+
+    def test_validate_request_validate_response(self):
+        # Ensure that w/ proper conditions `validate_response is called`
+        request = mock.MagicMock()
+        request.g_recaptcha_response = None
+        # backwarrd compat skip
+        request.httprequest.environ = {}
+        request.httprequest.remote_addr = '1.2.3.4'
+        with mock.patch.object(
+                type(self.model_obj), 'validate_response') as mocked:
+            self.model_obj.validate_request(
+                request, {self.model_obj.RESPONSE_ATTR: 'validate_me'}
+            )
+            mocked.assert_called_with('validate_me', '1.2.3.4')
+
+    def test_action_validate_backward_compat(self):
+        # Ensure that w/ proper conditions `validate_response is called`
+        with mock.patch.object(
+                type(self.model_obj), 'validate_response') as mocked:
+            self.model_obj.action_validate(
+                'captcha_value', '4.5.6.7'
+            )
+            mocked.assert_called_with('captcha_value', '4.5.6.7')
+
     def test_get_credentials(self):
         # by default retrieve global value from config params
         creds = self.model_obj._get_api_credentials(website=self.website)
