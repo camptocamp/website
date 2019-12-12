@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <template
+    id="layout"
+    name="Alternate languages replacement"
+    inherit_id="website.layout">
+
+    <xpath expr="//head/t[@t-if='request and request.website_multilang and website']" position="replace">
+        <t t-call="website_cms.alternate_languages" />
+    </xpath>
+
+  </template>
+
+
+  <template id="add_translation_review_message" inherit_id="website.layout" name="Add translation review message">
+
+    <xpath expr="//div[@id='wrapwrap']/main/*" position="before">
+      <t t-call="website_content_translation.review_message" />
+    </xpath>
+
+  </template>
+
+</odoo>
