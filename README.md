@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [website_legal_page](website_legal_page/) | 16.0.1.1.0 |  | Website Legal Page
 [website_menu_by_user_status](website_menu_by_user_status/) | 16.0.1.0.0 |  | Allow to manage the display of website.menus
 [website_odoo_debranding](website_odoo_debranding/) | 16.0.1.0.0 |  | Remove Odoo Branding from Website
+[website_recaptcha_v2](website_recaptcha_v2/) | 16.0.1.0.0 |  | Helper module to add reCAPTCHA v2 to website forms
 [website_require_login](website_require_login/) | 16.0.1.0.0 |  | Website Login Required
 [website_snippet_country_dropdown](website_snippet_country_dropdown/) | 16.0.1.0.0 |  | Allow to select country in a dropdown
 [website_whatsapp](website_whatsapp/) | 16.0.1.0.1 | [![ioans73](https://github.com/ioans73.png?size=30px)](https://github.com/ioans73) | Whatsapp integration
