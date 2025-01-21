@@ -15,8 +15,11 @@ class ProductTemplate(models.Model):
         ):
             pricelist = pricelist.with_context(skip_alternative_pricelist=True)
             res = super()._get_sales_prices(pricelist)
+            precision = self.sudo().env["decimal.precision"].precision_get("Discount")
             for product_id in res:
-                res[product_id]["base_price"] = res[product_id]["price_reduce"]
+                res[product_id]["base_price"] = round(
+                    res[product_id]["price_reduce"], precision
+                )
                 pricelist = pricelist.with_context(skip_alternative_pricelist=False)
                 product = self.env["product.template"].browse(product_id)
                 res[product_id]["price_reduce"] = pricelist._get_product_price(
